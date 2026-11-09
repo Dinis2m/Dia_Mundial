@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dia Mundial da Ciência para a Paz e o Desenvolvimento - Celebrando a ciência como força motriz da paz global e desenvolvimento sustentável">
+  <meta name="theme-color" content="#0b0f19">
+  <meta property="og:title" content="Dia Mundial da Ciência para a Paz e o Desenvolvimento">
+  <meta property="og:description" content="A ciência como a luz da paz e a força do desenvolvimento">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/icons/science-icon.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Dia Mundial da Ciência para a Paz e o Desenvolvimento | 10 de Novembro</title>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+
+  <!-- Google Fonts -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+
+  <!-- AOS CSS (Animate On Scroll) -->
+  <link rel="preload" as="style" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" media="print" onload="this.media='all'">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/science-icon.svg">
+  <link rel="apple-touch-icon" href="assets/icons/science-icon.svg">
+
+  <!-- Loading Screen Styles (inline for immediate display) -->
+  <style>
+    .page-loader {
+      position: fixed;
+      inset: 0;
+      background: #0b0f19;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    .page-loader.loaded { opacity: 0; visibility: hidden; }
+    .loader-content { text-align: center; }
+    .loader-atom { width: 80px; height: 80px; margin: 0 auto 2rem; }
+    .loader-text { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 600; background: linear-gradient(135deg, #00f3ff, #bc71ff, #39ff14); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; background-size: 200% 200%; animation: gradient-shift 3s ease-in-out infinite; }
+    .loader-bar { width: 200px; height: 3px; background: rgba(0,243,255,0.1); border-radius: 3px; margin: 2rem auto 0; overflow: hidden; }
+    .loader-bar::after { content: ''; display: block; width: 100%; height: 100%; background: linear-gradient(135deg, #00f3ff, #bc71ff); border-radius: 3px; animation: loader-bar 2s ease-in-out infinite; transform: translateX(-100%); }
+    @keyframes loader-bar { to { transform: translateX(100%); } }
+    @keyframes gradient-shift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    .section-hidden { opacity: 0; transform: translateY(30px); }
+    .section-visible { opacity: 1; transform: translateY(0); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    @keyframes bounce { 0%,20%,50%,80%,100% { transform: translateX(-50%) translateY(0); } 40% { transform: translateX(-50%) translateY(-10px); } 60% { transform: translateX(-50%) translateY(-5px); } }
+  </style>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="page-loader" aria-hidden="true" id="page-loader">
+    <div class="loader-content">
+      <svg class="loader-atom" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+        <defs>
+          <linearGradient id="loaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00f3ff"/><stop offset="100%" stop-color="#bc71ff"/>
+          </linearGradient>
+        </defs>
+        <circle cx="32" cy="32" r="6" fill="url(#loaderGrad)">
+          <animate attributeName="r" values="6;10;6" dur="1s" repeatCount="indefinite"/>
+        </circle>
+        <ellipse cx="32" cy="32" rx="24" ry="8" stroke="url(#loaderGrad)" stroke-width="1.5" fill="none">
+          <animateTransform attributeName="transform" type="rotate" from="0 32 32" to="360 32 32" dur="2s" repeatCount="indefinite"/>
+        </ellipse>
+        <ellipse cx="32" cy="32" rx="8" ry="24" stroke="url(#loaderGrad)" stroke-width="1.5" fill="none">
+          <animateTransform attributeName="transform" type="rotate" from="360 32 32" to="0 32 32" dur="2.5s" repeatCount="indefinite"/>
+        </ellipse>
+      </svg>
+      <div class="loader-text">Carregando Universo...</div>
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+  <!-- Background Atmosphere -->
+  <div class="particle-field" aria-hidden="true"></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ========================================
+       HERO SECTION - O Acelerador de Partículas
+       ======================================== -->
+  <header class="hero section" id="inicio">
+    <div class="hero-content">
+      <div class="hero-badge" data-aos="fade-up" data-aos-delay="100">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+        </svg>
+        <span>Dia Mundial da Ciência para a Paz e o Desenvolvimento</span>
+        <span class="mono">10 NOV</span>
+      </div>
+
+      <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+        <span class="line">A Ciência como a</span>
+        <span class="line gradient-text">Luz da Paz</span>
+        <span class="line">e a Força do</span>
+        <span class="line gradient-text">Desenvolvimento</span>
+      </h1>
+
+      <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
+        Celebrando o poder transformador da ciência na construção de sociedades pacíficas,
+        sustentáveis e prósperas. Uma data para refletir, agir e inspirar o futuro.
+      </p>
+
+      <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
+        <button class="btn btn-primary btn-pulse" data-aos="zoom-in" data-aos-delay="600" onclick="scrollToSection('manifesto')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          Explorar Manifesto
+        </button>
+        <button class="btn btn-secondary" data-aos="zoom-in" data-aos-delay="700" onclick="scrollToSection('elementos')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
+          Ver os Pilares
+        </button>
+      </div>
+
+      <div class="hero-stats" data-aos="fade-up" data-aos-delay="800">
+        <div class="stat-item">
+          <div class="stat-value" id="stat-countries" data-counter="193">0</div>
+          <div class="stat-label">Países Membros</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="stat-years" data-counter="23">0</div>
+          <div class="stat-label">Anos de Celebração</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="stat-projects" data-counter="847" data-counter-suffix="+">0</div>
+          <div class="stat-label">Projetos Globais</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="stat-scientists" data-counter="12000" data-counter-suffix="+">0</div>
+          <div class="stat-label">Cientistas Envolvidos</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Particle Accelerator Visual -->
+    <div class="accelerator-ring" aria-hidden="true"></div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00f3ff" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================================
+         MANIFESTO SECTION - Reação em Cadeia
+         ======================================== -->
+    <section class="manifesto section" id="manifesto" data-aos="fade-up">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag" data-aos="fade-up">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            Manifesto
+          </span>
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Reação em Cadeia</h2>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Cada descoberta científica desencadeia uma reação em cadeia de progresso, iluminando o caminho para a paz.</p>
+        </header>
+
+        <div class="manifesto-content glass-card" data-aos="fade-up" data-aos-delay="300" style="padding: var(--space-12);">
+          <blockquote class="manifesto-text">
+            <p>
+              <span class="highlight">A ciência não conhece fronteiras.</span> Quando um pesquisador em Lisboa descobre uma nova forma de purificar água,
+              uma comunidade no interior do Brasil tem acesso a água potável.
+              Quando físicos no CERN colaboram além de diferenças políticas,
+              <span class="highlight">a diplomacia científica</span> prova que a linguagem dos dados é universal.
+            </p>
+            <p style="margin-top: var(--space-6);">
+              Este dia — <span class="gradient-text-cyan">10 de Novembro</span> — nos lembra que cada equação resolvida,
+              cada vacina desenvolvida, cada satélite lançado para monitorar o clima,
+              é um ato de <span class="highlight">esperança prática</span>.
+              A paz não é apenas ausência de conflito; é presença de conhecimento compartilhado.
+            </p>
+            <p style="margin-top: var(--space-6);">
+              <span class="highlight">O desenvolvimento sustentável</span> nasce quando a ciência serve o ser humano.
+              Energia limpa para vilarejos remotos. Agricultura de precisão para alimentar milhões.
+              Tecnologias acessíveis que reduzem desigualdades.
+              <span class="gradient-text-green">A ciência é a ponte entre o mundo que temos e o mundo que merecemos.</span>
+            </p>
+          </blockquote>
+
+          <div class="manifesto-signature" data-aos="fade-up" data-aos-delay="500">
+            <span class="signature-line"></span>
+            <span>Declaração Universal — UNESCO</span>
+            <span class="signature-line"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         3D ELEMENTS GRID - Os Três Elementos
+         ======================================== -->
+    <section class="section" id="elementos">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag" data-aos="fade-up">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Os Três Elementos
+          </span>
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Pilares da Ciência para a Humanidade</h2>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Três forças fundamentais que movem o progresso global, interligadas como átomos em uma molécula de esperança.</p>
+        </header>
+
+        <div class="elements-grid">
+          <!-- Elemento 1: Cerne Social -->
+          <article class="element-card glass-card" data-aos="fade-up" data-aos-delay="100" style="--mouse-x: 0; --mouse-y: 0;">
+            <span class="element-number">01</span>
+            <img src="assets/icons/science-icon.svg" alt="Ícone de átomo representando ciência" class="element-icon" aria-hidden="true">
+            <h3 class="element-title">Cerne Social</h3>
+            <p class="element-description">
+              A ciência ao serviço do cidadão. Da saúde pública à educação acessível,
+              cada avanço científico deve retornar à sociedade sob forma de bem-estar,
+              dignidade e oportunidades iguais para todos.
+            </p>
+            <div class="element-tags">
+              <span class="tag">Saúde Global</span>
+              <span class="tag">Educação Aberta</span>
+              <span class="tag">Inclusão Digital</span>
+              <span class="tag">Direitos Humanos</span>
+            </div>
+          </article>
+
+          <!-- Elemento 2: Energia Limpa -->
+          <article class="element-card glass-card" data-aos="fade-up" data-aos-delay="200" style="--mouse-x: 0; --mouse-y: 0;">
+            <span class="element-number">02</span>
+            <img src="assets/icons/energy-icon.svg" alt="Ícone de folha e raio representando energia limpa" class="element-icon" aria-hidden="true">
+            <h3 class="element-title">Energia Limpa</h3>
+            <p class="element-description">
+              Desenvolvimento ecológico e sustentável. Fusão nuclear, solar de nova geração,
+              baterias de estado sólido — a revolução energética que permite crescer
+              sem destruir o planeta que nos sustenta.
+            </p>
+            <div class="element-tags">
+              <span class="tag">Fusão Nuclear</span>
+              <span class="tag">Solar Avançado</span>
+              <span class="tag">Armazenamento</span>
+              <span class="tag">Carbono Zero</span>
+            </div>
+          </article>
+
+          <!-- Elemento 3: Diplomacia Científica -->
+          <article class="element-card glass-card" data-aos="fade-up" data-aos-delay="300" style="--mouse-x: 0; --mouse-y: 0;">
+            <span class="element-number">03</span>
+            <img src="assets/icons/diplomacy-icon.svg" alt="Ícone de aperto de mãos e globo representando diplomacia científica" class="element-icon" aria-hidden="true">
+            <h3 class="element-title">Diplomacia Científica</h3>
+            <p class="element-description">
+              A ciência como linguagem universal. Colaborações transfronteiriças no CERN,
+              estação espacial internacional, genoma humano — provam que quando
+              cientistas dialogam, as nações encontram caminhos para a paz.
+            </p>
+            <div class="element-tags">
+              <span class="tag">Colaboração Global</span>
+              <span class="tag">Dados Abertos</span>
+              <span class="tag">Paz pela Ciência</span>
+              <span class="tag">Governação Comum</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SCIENTISTS SECTION - Mentes que Iluminaram o Mundo
+         ======================================== -->
+    <section class="section" id="cientistas">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag" data-aos="fade-up">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+            Mentes Luminosas
+          </span>
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Cientistas que Moldaram a Paz e o Progresso</h2>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Visionários cujo trabalho transcendeu fronteiras, salvou milhões de vidas e provou que o conhecimento é a maior força para a paz.</p>
+        </header>
+
+        <div class="scientists-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6);">
+          <!-- Marie Curie -->
+          <article class="scientist-card glass-card" data-aos="fade-up" data-aos-delay="100" style="padding: var(--space-6); border-left: 3px solid var(--neon-purple);">
+            <div class="scientist-header" style="display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-4);">
+              <div class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); background: var(--grad-purple-green); display: flex; align-items: center; justify-content: center; font-size: var(--text-2xl); font-weight: 700; color: var(--color-space); flex-shrink: 0;">MC</div>
+              <div>
+                <h3 class="scientist-name" style="font-size: var(--text-xl); margin-bottom: var(--space-1);">Marie Curie</h3>
+                <p class="scientist-years mono" style="color: var(--neon-purple); font-size: var(--text-sm);">1867–1934 • Polônia/França</p>
+              </div>
+            </div>
+            <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Única pessoa a ganhar Nobel em duas ciências diferentes (Física 1903, Química 1911). Pioneira na radioatividade, seu trabalho salvou incontáveis vidas na medicina. Durante a WWI, desenvolveu unidades móveis de raio-X para hospitais de campanha.</p>
+            <div class="scientist-legacy" style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+              <span class="tag" style="background: rgba(188,113,255,0.15); border-color: rgba(188,113,255,0.3); color: var(--neon-purple);">Radioatividade</span>
+              <span class="tag" style="background: rgba(188,113,255,0.15); border-color: rgba(188,113,255,0.3); color: var(--neon-purple);">Medicina Nuclear</span>
+              <span class="tag" style="background: rgba(188,113,255,0.15); border-color: rgba(188,113,255,0.3); color: var(--neon-purple);">Mulheres na Ciência</span>
+            </div>
+          </article>
+
+          <!-- Albert Einstein -->
+          <article class="scientist-card glass-card" data-aos="fade-up" data-aos-delay="200" style="padding: var(--space-6); border-left: 3px solid var(--neon-cyan);">
+            <div class="scientist-header" style="display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-4);">
+              <div class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); background: var(--grad-cyan-purple); display: flex; align-items: center; justify-content: center; font-size: var(--text-2xl); font-weight: 700; color: var(--color-space); flex-shrink: 0;">AE</div>
+              <div>
+                <h3 class="scientist-name" style="font-size: var(--text-xl); margin-bottom: var(--space-1);">Albert Einstein</h3>
+                <p class="scientist-years mono" style="color: var(--neon-cyan); font-size: var(--text-sm);">1879–1955 • Alemanha/EUA</p>
+              </div>
+            </div>
+            <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Relatividade geral transformou nossa compreensão do universo. Pacifista convicto, assinou o Manifesto Russell-Einstein (1955) alertando para perigos nucleares. Sua carta a Roosevelt (1939) iniciou o Projeto Manhattan, mas depois arrependeu-se e advogou pelo desarmamento.</p>
+            <div class="scientist-legacy" style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+              <span class="tag" style="background: rgba(0,243,255,0.15); border-color: rgba(0,243,255,0.3); color: var(--neon-cyan);">Relatividade</span>
+              <span class="tag" style="background: rgba(0,243,255,0.15); border-color: rgba(0,243,255,0.3); color: var(--neon-cyan);">Pacifismo</span>
+              <span class="tag" style="background: rgba(0,243,255,0.15); border-color: rgba(0,243,255,0.3); color: var(--neon-cyan);">Desarmamento</span>
+            </div>
+          </article>
+
+          <!-- Tu Youyou -->
+          <article class="scientist-card glass-card" data-aos="fade-up" data-aos-delay="300" style="padding: var(--space-6); border-left: 3px solid var(--neon-green);">
+            <div class="scientist-header" style="display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-4);">
+              <div class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); background: var(--grad-green-orange); display: flex; align-items: center; justify-content: center; font-size: var(--text-2xl); font-weight: 700; color: var(--color-space); flex-shrink: 0;">TY</div>
+              <div>
+                <h3 class="scientist-name" style="font-size: var(--text-xl); margin-bottom: var(--space-1);">Tu Youyou</h3>
+                <p class="scientist-years mono" style="color: var(--neon-green); font-size: var(--text-sm);">1930–presente • China</p>
+              </div>
+            </div>
+            <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Descobriu a artemisinina, tratamento revolucionário contra malária que salvou milhões de vidas no mundo em desenvolvimento. Prêmio Nobel de Fisiologia/Medicina 2015. Sua pesquisa combinou medicina tradicional chinesa com ciência moderna — exemplo perfeito de ciência a serviço da humanidade.</p>
+            <div class="scientist-legacy" style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+              <span class="tag" style="background: rgba(57,255,20,0.15); border-color: rgba(57,255,20,0.3); color: var(--neon-green);">Antimalárica</span>
+              <span class="tag" style="background: rgba(57,255,20,0.15); border-color: rgba(57,255,20,0.3); color: var(--neon-green);">Saúde Global</span>
+              <span class="tag" style="background: rgba(57,255,20,0.15); border-color: rgba(57,255,20,0.3); color: var(--neon-green);">Medicina Tradicional</span>
+            </div>
+          </article>
+
+          <!-- Abdus Salam -->
+          <article class="scientist-card glass-card" data-aos="fade-up" data-aos-delay="400" style="padding: var(--space-6); border-left: 3px solid var(--neon-orange);">
+            <div class="scientist-header" style="display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-4);">
+              <div class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); background: linear-gradient(135deg, #ff6b35, #bc71ff); display: flex; align-items: center; justify-content: center; font-size: var(--text-2xl); font-weight: 700; color: var(--color-space); flex-shrink: 0;">AS</div>
+              <div>
+                <h3 class="scientist-name" style="font-size: var(--text-xl); margin-bottom: var(--space-1);">Abdus Salam</h3>
+                <p class="scientist-years mono" style="color: var(--neon-orange); font-size: var(--text-sm);">1926–1996 • Paquistão/Reino Unido</p>
+              </div>
+            </div>
+            <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Nobel de Física 1979 (eletrofraco). Fundou o ICTP (Centro Internacional de Física Teórica) em Trieste, criando ponte para cientistas do Sul Global. Primeiro muçulmano a ganhar Nobel científico. Dedicou vida a reduzir a desigualdade científica entre nações ricas e pobres.</p>
+            <div class="scientist-legacy" style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+              <span class="tag" style="background: rgba(255,107,53,0.15); border-color: rgba(255,107,53,0.3); color: var(--neon-orange);">Eletrofraco</span>
+              <span class="tag" style="background: rgba(255,107,53,0.15); border-color: rgba(255,107,53,0.3); color: var(--neon-orange);">ICTP</span>
+              <span class="tag" style="background: rgba(255,107,53,0.15); border-color: rgba(255,107,53,0.3); color: var(--neon-orange);">Ciência para o Desenvolvimento</span>
+            </div>
+          </article>
+
+          <!-- Jennifer Doudna -->
+          <article class="scientist-card glass-card" data-aos="fade-up" data-aos-delay="500" style="padding: var(--space-6); border-left: 3px solid var(--neon-purple);">
+            <div class="scientist-header" style="display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-4);">
+              <div class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); background: var(--grad-purple-green); display: flex; align-items: center; justify-content: center; font-size: var(--text-2xl); font-weight: 700; color: var(--color-space); flex-shrink: 0;">JD</div>
+              <div>
+                <h3 class="scientist-name" style="font-size: var(--text-xl); margin-bottom: var(--space-1);">Jennifer Doudna</h3>
+                <p class="scientist-years mono" style="color: var(--neon-purple); font-size: var(--text-sm);">1964–presente • EUA</p>
+              </div>
+            </div>
+            <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Co-descobridora do CRISPR-Cas9, revolucionando edição genética. Nobel de Química 2020. Líder na ética da edição genômica, defende uso responsável para curar doenças genéticas. Exemplo de ciência de fronteira com responsabilidade social.</p>
+            <div class="scientist-legacy" style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+              <span class="tag" style="background: rgba(188,113,255,0.15); border-color: rgba(188,113,255,0.3); color: var(--neon-purple);">CRISPR</span>
+              <span class="tag" style="background: rgba(188,113,255,0.15); border-color: rgba(188,113,255,0.3); color: var(--neon-purple);">Edição Genética</span>
+              <span class="tag" style="background: rgba(188,113,255,0.15); border-color: rgba(188,113,255,0.3); color: var(--neon-purple);">Bioética</span>
+            </div>
+          </article>
+
+          <!-- Carlos Chagas -->
+          <article class="scientist-card glass-card" data-aos="fade-up" data-aos-delay="600" style="padding: var(--space-6); border-left: 3px solid var(--neon-green);">
+            <div class="scientist-header" style="display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-4);">
+              <div class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); background: var(--grad-green-orange); display: flex; align-items: center; justify-content: center; font-size: var(--text-2xl); font-weight: 700; color: var(--color-space); flex-shrink: 0;">CC</div>
+              <div>
+                <h3 class="scientist-name" style="font-size: var(--text-xl); margin-bottom: var(--space-1);">Carlos Chagas</h3>
+                <p class="scientist-years mono" style="color: var(--neon-green); font-size: var(--text-sm);">1879–1934 • Brasil</p>
+              </div>
+            </div>
+            <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Descobriu a doença de Chagas (1909), identificando parasita, vetor, hospedeiro e sintomas — feito único na parasitologia. Fundou o Instituto Oswaldo Cruz. Pioneiro em saúde pública tropical, seu trabalho salva vidas na América Latina até hoje. Símbolo da ciência brasileira a serviço do povo.</p>
+            <div class="scientist-legacy" style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+              <span class="tag" style="background: rgba(57,255,20,0.15); border-color: rgba(57,255,20,0.3); color: var(--neon-green);">Parasitologia</span>
+              <span class="tag" style="background: rgba(57,255,20,0.15); border-color: rgba(57,255,20,0.3); color: var(--neon-green);">Saúde Tropical</span>
+              <span class="tag" style="background: rgba(57,255,20,0.15); border-color: rgba(57,255,20,0.3); color: var(--neon-green);">Ciência Brasileira</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         TIMELINE - Linha de Evolução
+         ======================================== -->
+    <section class="section" id="timeline">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag" data-aos="fade-up">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><polyline points="5 11 12 18 19 11"/></svg>
+            Linha de Evolução
+          </span>
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Marcos que Transformaram a Humanidade</h2>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Uma jornada através das descobertas e acordos que redefiniram nossa compreensão do universo e nossa capacidade de construir a paz.</p>
+        </header>
+
+        <div class="timeline" data-aos="fade-up">
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content glass-card">
+              <time class="timeline-year mono">1945</time>
+              <h3 class="timeline-title">Criação da UNESCO</h3>
+              <p class="timeline-description">Organização das Nações Unidas para a Educação, a Ciência e a Cultura nasce com a missão de construir a paz através da cooperação intelectual e científica entre nações.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content glass-card">
+              <time class="timeline-year mono">1954</time>
+              <h3 class="timeline-title">Fundação do CERN</h3>
+              <p class="timeline-description">O maior laboratório de física de partículas do mundo torna-se símbolo máximo de diplomacia científica, unindo dezenas de países em busca do conhecimento fundamental.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content glass-card">
+              <time class="timeline-year mono">1962</time>
+              <h3 class="timeline-title">Rachel Carson — Primavera Silenciosa</h3>
+              <p class="timeline-description">Livro revolucionário expõe perigos dos pesticidas, nasce o movimento ambientalista moderno. Ciência servindo de alerta para proteger a biosfera.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content glass-card">
+              <time class="timeline-year mono">1967</time>
+              <h3 class="timeline-title">Tratado do Espaço Exterior</h3>
+              <p class="timeline-description">Primeiro tratado de controle de armas no espaço, estabelecendo que a exploração espacial deve beneficiar toda a humanidade e ser realizada para fins pacíficos.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content glass-card">
+              <time class="timeline-year mono">1987</time>
+              <h3 class="timeline-title">Protocolo de Montreal</h3>
+              <p class="timeline-description">Acordo global histórico para proteger a camada de ozônio — prova definitiva de que ciência + política + vontade popular podem reverter danos planetários.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content glass-card">
+              <time class="timeline-year mono">1990</time>
+              <h3 class="timeline-title">Projeto Genoma Humano Inicia</h3>
+              <p class="timeline-description">Maior colaboração biológica da história. Sequenciamento completo (2003) abriu portas para medicina personalizada, diagnóstico genético e compreensão da nossa origem comum.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content glass-card">
+              <time class="timeline-year mono">2001</time>
+              <h3 class="timeline-title">Dia Mundial da Ciência Oficializado</h3>
+              <p class="timeline-description">UNESCO estabelece 10 de novembro como Dia Mundial da Ciência para a Paz e o Desenvolvimento, renovando o compromisso global com a ciência a serviço da humanidade.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content glass-card">
+              <time class="timeline-year mono">2015</time>
+              <h3 class="timeline-title">Objetivos de Desenvolvimento Sustentável</h3>
+              <p class="timeline-description">17 ODS adotados por 193 países, com ciência, tecnologia e inovação no centro de todas as metas — da erradicação da pobreza à ação climática.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content glass-card">
+              <time class="timeline-year mono">2020</time>
+              <h3 class="timeline-title">Vacinas mRNA — COVID-19</h3>
+              <p class="timeline-description">Desenvolvimento recorde de vacinas (Pfizer/BioNTech, Moderna) usando tecnologia mRNA. Ciência global colaborativa salvou dezenas de milhões de vidas em tempo recorde.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content glass-card">
+              <time class="timeline-year mono">2022</time>
+              <h3 class="timeline-title">Fusão Nuclear — Ignition Achieved</h3>
+              <p class="timeline-description">NIF (EUA) alcança ignição de fusão com ganho energético líquido. Marco histórico rumo à energia limpa, abundante e segura — o "Santo Graal" da física aplicada.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer class="footer" id="contato">
+    <div class="container">
+      <div class="footer-content">
+        <blockquote class="footer-quote" data-aos="fade-up">
+          <p>"A ciência é a lanterna que ilumina o caminho da paz.<br>O desenvolvimento é a jornada que fazemos juntos."</p>
+          <cite class="author">— Inspirado na Declaração de Budapeste, UNESCO 1999</cite>
+        </blockquote>
+
+        <nav class="footer-links" data-aos="fade-up" data-aos-delay="100" aria-label="Links do rodapé">
+          <a href="#inicio" class="footer-link">Início</a>
+          <a href="#manifesto" class="footer-link">Manifesto</a>
+          <a href="#elementos" class="footer-link">Pilares</a>
+          <a href="#cientistas" class="footer-link">Cientistas</a>
+          <a href="#timeline" class="footer-link">História</a>
+          <a href="https://unesco.org" target="_blank" rel="noopener" class="footer-link">UNESCO</a>
+        </nav>
+
+        <p class="footer-copyright" data-aos="fade-up" data-aos-delay="200">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:middle;margin-right:4px;" aria-hidden="true"><circle cx="12" cy="12" r="10"/></svg>
+          2024 Dia Mundial da Ciência para a Paz e o Desenvolvimento — Construído com ciência, código e esperança.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo" onclick="scrollToTop()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- Scripts -->
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Inline initialization for critical animations & button handlers -->
+  <script>
+    // Scroll helper functions
+    function scrollToSection(id) {
+      const element = document.getElementById(id);
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        history.pushState(null, null, '#' + id);
+      }
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Ensure AOS is initialized
+    (function() {
+      if (typeof AOS !== 'undefined' && !window._aosInitialized) {
+        AOS.init({
+          duration: 1000,
+          easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+          once: true,
+          offset: 80,
+          disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        });
+        window._aosInitialized = true;
+        // Mark AOS as loaded successfully
+        document.documentElement.classList.add('aos-loaded');
+      } else if (typeof AOS === 'undefined') {
+        // AOS failed to load - fallback: make all aos elements visible
+        document.documentElement.classList.add('no-aos');
+        console.warn('AOS library failed to load, showing all animated elements');
+      }
+    })();
+
+    // Hide loader when page is fully loaded
+    window.addEventListener('load', function() {
+      const loader = document.getElementById('page-loader');
+      if (loader) {
+        loader.classList.add('loaded');
+        setTimeout(() => { loader.style.display = 'none'; }, 500);
+      }
+      // Refresh AOS after load
+      if (typeof AOS !== 'undefined') {
+        setTimeout(() => AOS.refresh(), 100);
+      }
+      // Fallback: if AOS hasn't initialized after 3 seconds, force visibility
+      setTimeout(() => {
+        if (typeof AOS !== 'undefined' && !document.documentElement.classList.contains('aos-loaded')) {
+          document.documentElement.classList.add('no-aos');
+          console.warn('AOS initialization timeout, showing all animated elements');
+        }
+      }, 3000);
+    });
+
+    // Fallback for counter animation if main.js doesn't load
+    document.addEventListener('DOMContentLoaded', function() {
+      const counters = document.querySelectorAll('[data-counter]');
+      if (counters.length && !window.ScienceDayApp) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const target = parseInt(el.dataset.counter, 10);
+              const suffix = el.dataset.counterSuffix || '';
+              const duration = parseInt(el.dataset.counterDuration, 10) || 2500;
+              animateCounterFallback(el, target, suffix, duration);
+              observer.unobserve(el);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        counters.forEach(c => observer.observe(c));
+      }
+    });
+
+    function animateCounterFallback(element, target, suffix, duration) {
+      const start = 0;
+      const startTime = performance.now();
+      const isLarge = target >= 1000;
+
+      function update(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(start + (target - start) * eased);
+        element.textContent = (isLarge ? current.toLocaleString('pt-PT') : current) + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') scrollToTop();
+      if (e.key === 'Home' && e.ctrlKey) { e.preventDefault(); scrollToTop(); }
+      if (e.key === 'End' && e.ctrlKey) { e.preventDefault(); window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }); }
+    });
+  </script>
+</body>
+</html>

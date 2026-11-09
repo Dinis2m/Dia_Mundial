@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="energyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#39ff14"/>
+      <stop offset="50%" stop-color="#00f3ff"/>
+      <stop offset="100%" stop-color="#ff6b35"/>
+    </linearGradient>
+  </defs>
+  <!-- Leaf/energy shape -->
+  <path d="M32 8 C20 16 12 32 16 44 C20 56 32 52 32 52 C32 52 44 56 48 44 C52 32 44 16 32 8" stroke="url(#energyGrad)" stroke-width="2" fill="none" opacity="0.8">
+    <animate attributeName="stroke-dashoffset" values="0;180" dur="3s" repeatCount="indefinite"/>
+  </path>
+  <!-- Leaf vein -->
+  <path d="M32 8 L32 52" stroke="url(#energyGrad)" stroke-width="1.5" fill="none" opacity="0.6">
+    <animate attributeName="stroke-dashoffset" values="0;44" dur="2s" repeatCount="indefinite"/>
+  </path>
+  <!-- Side veins -->
+  <path d="M32 20 Q20 28 16 36" stroke="url(#energyGrad)" stroke-width="1" fill="none" opacity="0.5">
+    <animate attributeName="stroke-dashoffset" values="0;25" dur="2.5s" repeatCount="indefinite"/>
+  </path>
+  <path d="M32 20 Q44 28 48 36" stroke="url(#energyGrad)" stroke-width="1" fill="none" opacity="0.5">
+    <animate attributeName="stroke-dashoffset" values="0;25" dur="2.5s" repeatCount="indefinite"/>
+  </path>
+  <path d="M32 36 Q22 42 18 48" stroke="url(#energyGrad)" stroke-width="1" fill="none" opacity="0.4">
+    <animate attributeName="stroke-dashoffset" values="0;20" dur="3s" repeatCount="indefinite"/>
+  </path>
+  <path d="M32 36 Q42 42 46 48" stroke="url(#energyGrad)" stroke-width="1" fill="none" opacity="0.4">
+    <animate attributeName="stroke-dashoffset" values="0;20" dur="3s" repeatCount="indefinite"/>
+  </path>
+  <!-- Energy particles -->
+  <circle cx="32" cy="20" r="2.5" fill="#39ff14" opacity="0.9">
+    <animateMotion path="M 32 20 Q 20 28 16 36 Q 18 42 32 52" dur="4s" repeatCount="indefinite" rotate="auto"/>
+  </circle>
+  <circle cx="32" cy="20" r="2" fill="#00f3ff" opacity="0.8">
+    <animateMotion path="M 32 20 Q 44 28 48 36 Q 46 42 32 52" dur="4.5s" repeatCount="indefinite" rotate="auto"/>
+  </circle>
+  <!-- Pulse rings from center -->
+  <circle cx="32" cy="32" r="10" stroke="#39ff14" stroke-width="1" fill="none" opacity="0.4">
+    <animate attributeName="r" values="10;28;10" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0;0.4" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="32" cy="32" r="12" stroke="#00f3ff" stroke-width="0.5" fill="none" opacity="0.3">
+    <animate attributeName="r" values="12;30;12" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0;0.3" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <!-- Lightning bolt in center -->
+  <path d="M28 28 L32 34 L30 34 L34 42 L30 36 L32 36 L28 28" fill="url(#energyGrad)" opacity="0.9">
+    <animate attributeName="opacity" values="0.9;0.5;0.9" dur="1.5s" repeatCount="indefinite"/>
+  </path>
+</svg>

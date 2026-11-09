@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="chagasGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#39ff14"/>
+      <stop offset="50%" stop-color="#ff6b35"/>
+      <stop offset="100%" stop-color="#00f3ff"/>
+    </linearGradient>
+    <radialGradient id="glowChagas" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#39ff14" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#39ff14" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="60" r="80" fill="url(#glowChagas)"/>
+  <!-- Hair - early 1900s style, parted -->
+  <path d="M55 70 Q50 50 70 42 Q100 35 130 42 Q150 50 145 70 Q145 95 130 110 Q100 120 70 110 Q55 95 55 70" fill="#1a1510" opacity="0.95"/>
+  <path d="M65 70 Q70 52 100 48 Q130 52 135 70" fill="#0d0a08" opacity="0.8"/>
+  <!-- Face -->
+  <ellipse cx="100" cy="110" rx="55" ry="70" fill="url(#chagasGrad)" opacity="0.1" stroke="url(#chagasGrad)" stroke-width="1"/>
+  <!-- Mustache - iconic -->
+  <path d="M70 132 Q85 138 100 135 Q115 138 130 132" fill="#1a1510" opacity="0.9"/>
+  <path d="M75 135 Q90 142 100 138 Q110 142 125 135" fill="#1a1510" opacity="0.7"/>
+  <!-- Eyes - determined, observant -->
+  <ellipse cx="82" cy="98" rx="6" ry="3.5" fill="#39ff14" opacity="0.9">
+    <animate attributeName="opacity" values="0.9;0.4;0.9" dur="5s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="118" cy="98" rx="6" ry="3.5" fill="#39ff14" opacity="0.9">
+    <animate attributeName="opacity" values="0.4;0.9;0.4" dur="5s" repeatCount="indefinite"/>
+  </ellipse>
+  <!-- Eyebrows - thick, expressive -->
+  <path d="M65 88 Q82 82 98 88" fill="none" stroke="#1a1510" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+  <path d="M102 88 Q118 82 135 88" fill="none" stroke="#1a1510" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+  <!-- Nose -->
+  <path d="M100 108 Q97 120 100 118 Q103 120 100 108" fill="#1a1510" opacity="0.6"/>
+  <!-- Mouth -->
+  <path d="M88 140 Q100 144 112 140" fill="none" stroke="url(#chagasGrad)" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+  <!-- Collar - formal 1900s -->
+  <path d="M50 150 Q50 170 100 190 Q150 170 150 150" fill="#ffffff" opacity="0.15" stroke="url(#chagasGrad)" stroke-width="1.5"/>
+  <path d="M75 155 Q100 170 125 155" fill="none" stroke="url(#chagasGrad)" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+  <path d="M95 155 Q100 165 105 155" fill="none" stroke="url(#chagasGrad)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <!-- Trypanosoma cruzi (parasite) -->
+  <g fill="#39ff14" opacity="0.8">
+    <ellipse cx="30" cy="55" rx="8" ry="3"><animateTransform attributeName="transform" type="rotate" from="30 30 55" to="390 30 55" dur="15s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="170" cy="50" rx="6" ry="2.5"><animateTransform attributeName="transform" type="rotate" from="-30 170 50" to="330 170 50" dur="12s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="35" cy="150" rx="7" ry="2.5"><animateTransform attributeName="transform" type="rotate" from="45 35 150" to="405 35 150" dur="18s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="165" cy="155" rx="5" ry="2"><animateTransform attributeName="transform" type="rotate" from="-45 165 155" to="315 165 155" dur="14s" repeatCount="indefinite"/></ellipse>
+  </g>
+  <!-- Microscope -->
+  <g transform="translate(150, 80)" stroke="url(#chagasGrad)" stroke-width="1.5" fill="none" opacity="0.6">
+    <path d="M0 0 L-10 -20 M-10 -20 L-20 -20 M0 0 L0 -30">
+      <animate attributeName="stroke-dashoffset" values="0;30" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <circle cx="-15" cy="-25" r="8" fill="none">
+      <animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <!-- Brazil outline hint -->
+  <path d="M20 160 Q30 155 40 165 Q35 175 20 170" fill="none" stroke="url(#chagasGrad)" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.4">
+    <animate attributeName="stroke-dashoffset" values="0;20" dur="4s" repeatCount="indefinite"/>
+  </path>
+  <text x="30" y="168" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="6" font-weight="700" fill="url(#chagasGrad)" opacity="0.5">BR</text>
+  <!-- Nobel nominations (2x) -->
+  <circle cx="100" cy="172" r="10" fill="none" stroke="url(#chagasGrad)" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.4">
+    <animateTransform attributeName="transform" type="rotate" from="0 100 172" to="360 100 172" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <text x="100" y="176" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="7" font-weight="700" fill="url(#chagasGrad)" opacity="0.5">INDICADO NOBEL ×2</text>
+</svg>

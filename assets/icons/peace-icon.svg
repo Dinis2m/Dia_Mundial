@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="peaceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#39ff14"/>
+      <stop offset="100%" stop-color="#00f3ff"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer circle -->
+  <circle cx="32" cy="32" r="28" stroke="url(#peaceGrad)" stroke-width="2" fill="none" opacity="0.7">
+    <animate attributeName="stroke-dashoffset" values="0;176" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;0.4;0.7" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <!-- Peace symbol vertical line -->
+  <line x1="32" y1="12" x2="32" y2="52" stroke="url(#peaceGrad)" stroke-width="2.5">
+    <animate attributeName="stroke-dashoffset" values="0;40" dur="2s" repeatCount="indefinite"/>
+  </line>
+  <!-- Peace symbol diagonal lines -->
+  <line x1="32" y1="32" x2="16" y2="48" stroke="url(#peaceGrad)" stroke-width="2.5">
+    <animate attributeName="stroke-dashoffset" values="0;34" dur="2s" repeatCount="indefinite"/>
+  </line>
+  <line x1="32" y1="32" x2="48" y2="48" stroke="url(#peaceGrad)" stroke-width="2.5">
+    <animate attributeName="stroke-dashoffset" values="0;34" dur="2s" repeatCount="indefinite"/>
+  </line>
+  <!-- Inner orbiting particles -->
+  <g stroke="url(#peaceGrad)" stroke-width="1">
+    <circle cx="32" cy="12" r="4" fill="url(#peaceGrad)" opacity="0.8">
+      <animateMotion path="M 32 12 A 20 20 0 1 1 31.99 12" dur="6s" repeatCount="indefinite" rotate="auto"/>
+    </circle>
+    <circle cx="16" cy="48" r="3" fill="#39ff14" opacity="0.8">
+      <animateMotion path="M 16 48 A 16 16 0 1 0 16.01 48" dur="8s" repeatCount="indefinite" rotate="auto"/>
+    </circle>
+    <circle cx="48" cy="48" r="3" fill="#00f3ff" opacity="0.8">
+      <animateMotion path="M 48 48 A 16 16 0 1 1 47.99 48" dur="7s" repeatCount="indefinite" rotate="auto"/>
+    </circle>
+  </g>
+  <!-- Energy rings -->
+  <circle cx="32" cy="32" r="30" stroke="#39ff14" stroke-width="0.5" fill="none" opacity="0.2">
+    <animate attributeName="r" values="30;34;30" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.2;0;0.2" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="32" cy="32" r="32" stroke="#00f3ff" stroke-width="0.5" fill="none" opacity="0.15">
+    <animate attributeName="r" values="32;36;32" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0;0.15" dur="5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

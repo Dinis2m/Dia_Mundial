@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="salamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b35"/>
+      <stop offset="50%" stop-color="#bc71ff"/>
+      <stop offset="100%" stop-color="#00f3ff"/>
+    </linearGradient>
+    <radialGradient id="glowSalam" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#ff6b35" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ff6b35" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="60" r="80" fill="url(#glowSalam)"/>
+  <!-- Turban/Head covering -->
+  <path d="M50 75 Q50 40 100 30 Q150 40 150 75 Q150 95 130 105 Q100 115 70 105 Q50 95 50 75" fill="#0d111a" opacity="0.95" stroke="url(#salamGrad)" stroke-width="1"/>
+  <path d="M70 70 Q70 50 100 45 Q130 50 130 70" fill="#1a1f2e" opacity="0.8"/>
+  <!-- Face -->
+  <ellipse cx="100" cy="115" rx="55" ry="65" fill="url(#salamGrad)" opacity="0.1" stroke="url(#salamGrad)" stroke-width="1"/>
+  <!-- Beard -->
+  <path d="M65 115 Q60 130 80 145 Q100 155 120 145 Q140 130 135 115" fill="#0d111a" opacity="0.85"/>
+  <!-- Eyes - intense, visionary -->
+  <ellipse cx="82" cy="102" rx="6" ry="3.5" fill="#ff6b35" opacity="0.9">
+    <animate attributeName="opacity" values="0.9;0.5;0.9" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="118" cy="102" rx="6" ry="3.5" fill="#ff6b35" opacity="0.9">
+    <animate attributeName="opacity" values="0.5;0.9;0.5" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  <!-- Eyebrows -->
+  <path d="M68 90 Q82 85 96 90" fill="none" stroke="#0d111a" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+  <path d="M104 90 Q118 85 132 90" fill="none" stroke="#0d111a" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+  <!-- Nose -->
+  <path d="M98 110 Q100 120 102 110" fill="#0d111a" opacity="0.6"/>
+  <!-- Mouth -->
+  <path d="M90 132 Q100 135 110 132" fill="none" stroke="url(#salamGrad)" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+  <!-- Collar -->
+  <path d="M55 155 Q55 175 100 190 Q145 175 145 155" fill="#0d111a" stroke="url(#salamGrad)" stroke-width="1.5"/>
+  <!-- Electroweak theory particles (W+, W-, Z0) -->
+  <g fill="url(#salamGrad)" opacity="0.8">
+    <circle cx="30" cy="50" r="4"><animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/></circle>
+    <circle cx="170" cy="55" r="3.5"><animate attributeName="r" values="3.5;5;3.5" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0.3;0.8" dur="1.8s" repeatCount="indefinite"/></circle>
+    <circle cx="100" cy="30" r="3"><animate attributeName="r" values="3;5;3" dur="2.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.2s" repeatCount="indefinite"/></circle>
+    <text x="30" y="55" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="6" font-weight="700" fill="#ff6b35" opacity="0.7">W⁺</text>
+    <text x="170" y="60" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="6" font-weight="700" fill="#bc71ff" opacity="0.7">W⁻</text>
+    <text x="100" y="25" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="6" font-weight="700" fill="#00f3ff" opacity="0.7">Z⁰</text>
+  </g>
+  <!-- ICTP globe connection lines -->
+  <g stroke="url(#salamGrad)" stroke-width="0.8" opacity="0.3">
+    <circle cx="100" cy="165" r="20" fill="none"><animate attributeName="stroke-dashoffset" values="0;125" dur="8s" repeatCount="indefinite"/></circle>
+    <circle cx="100" cy="165" r="28" fill="none" stroke-dasharray="4 4"><animate attributeName="stroke-dashoffset" values="0;100" dur="10s" repeatCount="indefinite"/></circle>
+    <line x1="100" y1="145" x2="100" y2="125" stroke-dasharray="3 3"/>
+    <line x1="100" y1="185" x2="100" y2="205" stroke-dasharray="3 3"/>
+  </g>
+  <!-- Nobel -->
+  <circle cx="100" cy="172" r="10" fill="none" stroke="url(#salamGrad)" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.4">
+    <animateTransform attributeName="transform" type="rotate" from="0 100 172" to="-360 100 172" dur="16s" repeatCount="indefinite"/>
+  </circle>
+  <text x="100" y="176" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="7" font-weight="700" fill="url(#salamGrad)" opacity="0.5">NOBEL 1979</text>
+</svg>

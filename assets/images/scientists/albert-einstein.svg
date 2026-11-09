@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="einsteinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f3ff"/>
+      <stop offset="50%" stop-color="#bc71ff"/>
+      <stop offset="100%" stop-color="#00f3ff"/>
+    </linearGradient>
+    <radialGradient id="glowEinstein" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#00f3ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="60" r="80" fill="url(#glowEinstein)"/>
+  <!-- Wild hair -->
+  <path d="M40 75 Q30 55 50 45 Q70 35 100 30 Q130 35 150 45 Q170 55 160 75 Q165 95 145 105 Q100 120 55 105 Q35 95 40 75" fill="#0d111a" opacity="0.95">
+    <animate attributeName="d" values="M40 75 Q30 55 50 45 Q70 35 100 30 Q130 35 150 45 Q170 55 160 75 Q165 95 145 105 Q100 120 55 105 Q35 95 40 75; M38 75 Q25 50 48 42 Q68 32 100 28 Q132 32 152 42 Q175 50 162 75 Q168 98 148 108 Q100 125 52 108 Q32 98 38 75; M40 75 Q30 55 50 45 Q70 35 100 30 Q130 35 150 45 Q170 55 160 75 Q165 95 145 105 Q100 120 55 105 Q35 95 40 75" dur="6s" repeatCount="indefinite"/>
+  </path>
+  <!-- Face -->
+  <ellipse cx="100" cy="110" rx="55" ry="70" fill="url(#einsteinGrad)" opacity="0.1" stroke="url(#einsteinGrad)" stroke-width="1"/>
+  <!-- Mustache -->
+  <path d="M75 135 Q85 140 100 138 Q115 140 125 135" fill="none" stroke="#0d111a" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+  <path d="M80 138 Q90 145 100 142 Q110 145 120 138" fill="none" stroke="#0d111a" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <!-- Eyes - piercing -->
+  <ellipse cx="80" cy="100" rx="7" ry="4" fill="#00f3ff" opacity="0.8">
+    <animate attributeName="ry" values="4;1;4" dur="5s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="120" cy="100" rx="7" ry="4" fill="#00f3ff" opacity="0.8">
+    <animate attributeName="ry" values="1;4;1" dur="5s" repeatCount="indefinite"/>
+  </ellipse>
+  <!-- Eyebrows -->
+  <path d="M65 90 Q80 85 95 90" fill="none" stroke="#0d111a" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <path d="M105 90 Q120 85 135 90" fill="none" stroke="#0d111a" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <!-- Nose -->
+  <path d="M100 108 L96 122 L104 122" fill="#0d111a" opacity="0.5"/>
+  <!-- Tongue sticking out (iconic photo) -->
+  <ellipse cx="100" cy="145" rx="8" ry="6" fill="#ff6b35" opacity="0.9">
+    <animate attributeName="cy" values="145;150;145" dur="3s" repeatCount="indefinite"/>
+  </ellipse>
+  <!-- Collar -->
+  <path d="M50 155 Q50 180 100 195 Q150 180 150 155" fill="#0d111a" stroke="url(#einsteinGrad)" stroke-width="1"/>
+  <!-- E=mc² particles -->
+  <g font-family="Space Grotesk, sans-serif" font-size="10" font-weight="700" fill="url(#einsteinGrad)" opacity="0.5">
+    <text x="25" y="50" text-anchor="middle"><animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite">E</animate></text>
+    <text x="175" y="45" text-anchor="middle"><animate attributeName="opacity" values="0.6;0.3;0.6" dur="2.5s" repeatCount="indefinite">mc²</animate></text>
+    <text x="30" y="160" text-anchor="middle"><animate attributeName="opacity" values="0.4;0.7;0.4" dur="4s" repeatCount="indefinite">c</animate></text>
+    <text x="170" y="165" text-anchor="middle"><animate attributeName="opacity" values="0.5;0.2;0.5" dur="3.5s" repeatCount="indefinite">∞</animate></text>
+  </g>
+  <!-- Nobel -->
+  <circle cx="100" cy="170" r="10" fill="none" stroke="url(#einsteinGrad)" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.4">
+    <animateTransform attributeName="transform" type="rotate" from="0 100 170" to="-360 100 170" dur="15s" repeatCount="indefinite"/>
+  </circle>
+  <text x="100" y="174" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="7" font-weight="700" fill="url(#einsteinGrad)" opacity="0.5">NOBEL 1921</text>
+</svg>
