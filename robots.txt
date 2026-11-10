@@ -1,0 +1,19 @@
+# robots.txt for Dia Mundial da Ciência
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://example.com/sitemap.xml
+
+# Disallow admin/private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /sw.js
+Disallow: /offline.html
+
+# Crawl delay (polite crawling)
+Crawl-delay: 10
+
+# Host
+Host: https://example.com

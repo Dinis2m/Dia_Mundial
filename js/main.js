@@ -237,6 +237,282 @@ function initKeyboardNav() {
 }
 
 // ========================================
+// Quiz Functionality
+// ========================================
+const QuizState = {
+  currentQuestion: 1,
+  totalQuestions: 5,
+  scores: {
+    curie: 0,
+    einstein: 0,
+    franklin: 0,
+    salam: 0,
+    youyou: 0,
+    chagas: 0,
+    doudna: 0,
+    johnson: 0,
+    li: 0
+  },
+  answers: []
+};
+
+const SCIENTIST_DATA = {
+  curie: {
+    name: 'Marie Curie',
+    image: 'assets/images/Cientistas/Marie_Curie.jpg',
+    description: 'Pioneira da radioatividade, única pessoa com Nobel em duas ciências diferentes. Sua dedicação incansável à verdade científica mudou a física e a química para sempre.',
+    traits: ['Rigor', 'Persistência', 'Verdade']
+  },
+  einstein: {
+    name: 'Albert Einstein',
+    image: 'assets/images/Cientistas/Albert_Einstein.jpg',
+    description: 'Gênio da relatividade, voz pela paz mundial e direitos civis. Sua imaginação redefiniu o universo e sua consciência moral guiou a humanidade.',
+    traits: ['Imaginação', 'Paz', 'Humanidade']
+  },
+  franklin: {
+    name: 'Rosalind Franklin',
+    image: 'assets/images/Cientistas/RosalingFranklin.jpeg',
+    description: 'Co descobridora da estrutura do DNA, seu trabalho meticuloso em cristalografia de raios X foi fundamental para a biologia molecular moderna.',
+    traits: ['Precisão', 'Integridade', 'Descoberta']
+  },
+  salam: {
+    name: 'Abdus Salam',
+    image: 'assets/images/Cientistas/Abdus Salam.jpeg',
+    description: 'Unificador das forças fundamentais, Nobel de Física, fundador do ICTP. Dedicou sua vida a levar ciência de ponta ao mundo em desenvolvimento.',
+    traits: ['Unificação', 'Equidade', 'Diplomacia']
+  },
+  youyou: {
+    name: 'Tu Youyou',
+    image: 'assets/images/Cientistas/TuYouyou.jpeg',
+    description: 'Descobridora da artemisinina, salvou milhões de vidas da malária. Uniu medicina tradicional e ciência moderna com humildade e determinação.',
+    traits: ['Cura', 'Humildade', 'Impacto']
+  },
+  chagas: {
+    name: 'Carlos Chagas',
+    image: 'assets/images/Cientistas/CarlosChagas.jpeg',
+    description: 'Descobridor da doença de Chagas, descreveu todo o ciclo do parasita. Visionário da saúde pública tropical no Brasil e no mundo.',
+    traits: ['Saúde Pública', 'Visão', 'Dedicação']
+  },
+  doudna: {
+    name: 'Jennifer Doudna',
+    image: 'assets/images/Cientistas/Jennifer_Doudna.jpg',
+    description: 'Co inventora do CRISPR Cas9, revolucionou a edição genética. Defensora da ética na ciência e do uso responsável da tecnologia.',
+    traits: ['Inovação', 'Ética', 'Responsabilidade']
+  },
+  johnson: {
+    name: 'Katherine Johnson',
+    image: 'assets/images/Cientistas/KatherineJohnson.jpeg',
+    description: 'Matemática da NASA, cálculos orbitais precisos levaram astronautas à Lua. Quebrou barreiras raciais e de gênero com excelência silenciosa.',
+    traits: ['Precisão', 'Coragem', 'Excelência']
+  },
+  li: {
+    name: 'Fei-Fei Li',
+    image: 'assets/images/Cientistas/Fei-Fei Lis.jpeg',
+    description: 'Pioneira da visão computacional e ImageNet, democratiza a IA centrada no ser humano. Advoga por diversidade e ética na inteligência artificial.',
+    traits: ['Visão', 'Inclusão', 'Humanidade']
+  }
+};
+
+function initQuiz() {
+  const quizForm = document.getElementById('quiz-form');
+  const quizResult = document.getElementById('quiz-result');
+  const quizRestart = document.getElementById('quiz-restart');
+  const progressDots = document.querySelectorAll('.quiz-progress-dot');
+
+  if (!quizForm) return;
+
+  // Handle option selection
+  quizForm.addEventListener('click', (e) => {
+    const option = e.target.closest('.quiz-option');
+    if (!option) return;
+
+    const question = option.closest('.quiz-question');
+    const questionNum = parseInt(question.dataset.question, 10);
+
+    // Clear previous selection in this question
+    question.querySelectorAll('.quiz-option').forEach(opt => {
+      opt.classList.remove('selected');
+      opt.setAttribute('aria-pressed', 'false');
+    });
+
+    // Select this option
+    option.classList.add('selected');
+    option.setAttribute('aria-pressed', 'true');
+
+    // Store answer
+    const value = option.dataset.value;
+    const scientists = option.dataset.scientist.split(',');
+    QuizState.answers[questionNum - 1] = { value, scientists };
+
+    // Update scores
+    scientists.forEach(sci => {
+      if (QuizState.scores[sci] !== undefined) {
+        QuizState.scores[sci]++;
+      }
+    });
+
+    // Auto-advance after short delay
+    setTimeout(() => {
+      if (questionNum < QuizState.totalQuestions) {
+        goToQuestion(questionNum + 1);
+      } else {
+        showResult();
+      }
+    }, 400);
+  });
+
+  // Keyboard support for quiz options
+  quizForm.addEventListener('keydown', (e) => {
+    const option = e.target.closest('.quiz-option');
+    if (!option) return;
+
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      option.click();
+    }
+  });
+
+  // Restart quiz
+  if (quizRestart) {
+    quizRestart.addEventListener('click', resetQuiz);
+  }
+
+  function goToQuestion(num) {
+    // Hide current question
+    const currentQ = document.querySelector(`.quiz-question[data-question="${QuizState.currentQuestion}"]`);
+    if (currentQ) {
+      currentQ.classList.add('hidden');
+      currentQ.setAttribute('aria-hidden', 'true');
+    }
+
+    // Show next question
+    const nextQ = document.querySelector(`.quiz-question[data-question="${num}"]`);
+    if (nextQ) {
+      nextQ.classList.remove('hidden');
+      nextQ.setAttribute('aria-hidden', 'false');
+    }
+
+    // Update progress dots
+    progressDots.forEach((dot, index) => {
+      dot.classList.toggle('active', index + 1 === num);
+      dot.classList.toggle('completed', index + 1 < num);
+    });
+
+    // Update progress bar aria
+    const progressBar = document.querySelector('.quiz-progress');
+    if (progressBar) {
+      progressBar.setAttribute('aria-valuenow', num);
+    }
+
+    QuizState.currentQuestion = num;
+
+    // Scroll to quiz header on mobile
+    if (window.innerWidth < 768) {
+      const quizHeader = document.querySelector('.quiz-header');
+      if (quizHeader) {
+        quizHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }
+
+  function showResult() {
+    // Find top scientist
+    let topScientist = 'curie';
+    let maxScore = -1;
+    for (const [key, score] of Object.entries(QuizState.scores)) {
+      if (score > maxScore) {
+        maxScore = score;
+        topScientist = key;
+      }
+    }
+
+    const scientist = SCIENTIST_DATA[topScientist];
+
+    // Hide form, show result
+    quizForm.classList.add('hidden');
+    quizForm.setAttribute('aria-hidden', 'true');
+
+    if (quizResult) {
+      quizResult.classList.remove('hidden');
+      quizResult.setAttribute('aria-hidden', 'false');
+
+      // Populate result
+      const resultImage = quizResult.querySelector('#result-avatar');
+      const resultName = quizResult.querySelector('#result-name');
+      const resultDescription = quizResult.querySelector('#result-desc');
+      const resultTraits = quizResult.querySelector('#result-tags');
+
+      if (resultImage) {
+        resultImage.src = scientist.image;
+        resultImage.alt = scientist.name;
+      }
+      if (resultName) resultName.textContent = scientist.name;
+      if (resultDescription) resultDescription.textContent = scientist.description;
+      if (resultTraits) {
+        resultTraits.innerHTML = scientist.traits.map(trait =>
+          `<span class="result-trait">${trait}</span>`
+        ).join('');
+      }
+    }
+
+    // Announce to screen readers
+    announceResult(scientist.name);
+  }
+
+  function resetQuiz() {
+    // Reset state
+    QuizState.currentQuestion = 1;
+    QuizState.scores = {
+      curie: 0, einstein: 0, franklin: 0, salam: 0, youyou: 0,
+      chagas: 0, doudna: 0, johnson: 0, li: 0
+    };
+    QuizState.answers = [];
+
+    // Reset UI
+    quizForm.classList.remove('hidden');
+    quizForm.setAttribute('aria-hidden', 'false');
+    if (quizResult) {
+      quizResult.classList.add('hidden');
+      quizResult.setAttribute('aria-hidden', 'true');
+    }
+
+    // Reset all questions
+    document.querySelectorAll('.quiz-question').forEach((q, index) => {
+      q.classList.toggle('hidden', index !== 0);
+      q.setAttribute('aria-hidden', index !== 0);
+      q.querySelectorAll('.quiz-option').forEach(opt => {
+        opt.classList.remove('selected');
+        opt.setAttribute('aria-pressed', 'false');
+      });
+    });
+
+    // Reset progress
+    progressDots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === 0);
+      dot.classList.remove('completed');
+    });
+
+    const progressBar = document.querySelector('.quiz-progress');
+    if (progressBar) {
+      progressBar.setAttribute('aria-valuenow', 1);
+    }
+
+    // Scroll to quiz
+    const quizSection = document.getElementById('quiz');
+    if (quizSection) {
+      quizSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function announceResult(name) {
+    const liveRegion = document.getElementById('quiz-live-region');
+    if (liveRegion) {
+      liveRegion.textContent = `Resultado: você é ${name}`;
+    }
+  }
+}
+
+// ========================================
 // Intersection Observer for Section Transitions
 // ========================================
 function initSectionTransitions() {
@@ -276,6 +552,7 @@ function initApp() {
   initResizeHandler();
   initKeyboardNav();
   initSectionTransitions();
+  initQuiz();
 
   AppState.isInitialized = true;
 
