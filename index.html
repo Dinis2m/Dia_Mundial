@@ -3,14 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dia Mundial da Ciência para a Paz e o Desenvolvimento - Celebrando a ciência como força motriz da paz global e desenvolvimento sustentável">
-  <meta name="theme-color" content="#0b0f19">
+  <meta name="description" content="Dia Mundial da Ciência para a Paz e o Desenvolvimento Celebrando a ciência como força motriz da paz global e desenvolvimento sustentável">
+  <meta name="theme-color" content="#0b0f19" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta property="og:title" content="Dia Mundial da Ciência para a Paz e o Desenvolvimento">
   <meta property="og:description" content="A ciência como a luz da paz e a força do desenvolvimento">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/icons/science-icon.svg">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:locale" content="pt_PT">
   <meta name="twitter:card" content="summary_large_image">
-  <title>Dia Mundial da Ciência para a Paz e o Desenvolvimento | 10 de Novembro</title>
+  <meta name="twitter:title" content="Dia Mundial da Ciência para a Paz e o Desenvolvimento">
+  <meta name="twitter:description" content="A ciência como a luz da paz e a força do desenvolvimento">
+  <meta name="twitter:image" content="assets/icons/science-icon.svg">
+    <title>Dia Mundial da Ciência para a Paz e o Desenvolvimento | 10 de Novembro</title>
 
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +36,90 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/icons/science-icon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="assets/icons/science-icon.svg">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- PWA -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Dia da Ciência">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Dia Mundial da Ciência para a Paz e o Desenvolvimento",
+        "url": "https://example.com/",
+        "inLanguage": "pt-PT"
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://example.com/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Event",
+        "name": "Dia Mundial da Ciência para a Paz e o Desenvolvimento",
+        "description": "Celebrando a ciência como força motriz da paz global e desenvolvimento sustentável. Uma data para refletir, agir e inspirar o futuro.",
+        "startDate": "2026-11-10",
+        "endDate": "2026-11-10",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "location": {
+          "@type": "VirtualLocation",
+          "url": "https://example.com/"
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "UNESCO",
+          "url": "https://unesco.org",
+          "logo": "https://example.com/assets/icons/science-icon.svg"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "url": "https://example.com/"
+        },
+        "image": ["https://example.com/assets/icons/science-icon.svg"],
+        "performer": {
+          "@type": "Organization",
+          "name": "Comunidade Científica Global"
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "UNESCO",
+        "url": "https://unesco.org",
+        "logo": "https://example.com/assets/icons/science-icon.svg",
+        "sameAs": [
+          "https://twitter.com/UNESCO",
+          "https://facebook.com/UNESCO",
+          "https://linkedin.com/company/unesco",
+          "https://youtube.com/user/UNESCO"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Início", "item": "https://example.com/#inicio"},
+          {"@type": "ListItem", "position": 2, "name": "Manifesto", "item": "https://example.com/#manifesto"},
+          {"@type": "ListItem", "position": 3, "name": "Pilares", "item": "https://example.com/#elementos"},
+          {"@type": "ListItem", "position": 4, "name": "Cientistas", "item": "https://example.com/#cientistas"},
+          {"@type": "ListItem", "position": 5, "name": "História", "item": "https://example.com/#timeline"},
+          {"@type": "ListItem", "position": 6, "name": "Participar", "item": "https://example.com/#participar"},
+          {"@type": "ListItem", "position": 7, "name": "Quiz", "item": "https://example.com/#quiz"}
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- Loading Screen Styles (inline for immediate display) -->
   <style>
@@ -55,9 +144,201 @@
     .section-hidden { opacity: 0; transform: translateY(30px); }
     .section-visible { opacity: 1; transform: translateY(0); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
     @keyframes bounce { 0%,20%,50%,80%,100% { transform: translateX(-50%) translateY(0); } 40% { transform: translateX(-50%) translateY(-10px); } 60% { transform: translateX(-50%) translateY(-5px); } }
+
+    /* Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--neon-cyan);
+      color: var(--color-space);
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      font-family: var(--font-mono);
+      z-index: 10001;
+      text-decoration: none;
+      transition: top 0.3s ease;
+    }
+    .skip-link:focus { top: var(--space-4); outline: 3px solid var(--neon-purple); outline-offset: 2px; }
+
+    /* High Contrast Mode */
+    .high-contrast {
+      --color-space: #000000 !important;
+      --color-bg: #ffffff !important;
+      --color-bg-elevated: #ffffff !important;
+      --color-border: #000000 !important;
+      --text-primary: #000000 !important;
+      --text-secondary: #333333 !important;
+      --text-muted: #666666 !important;
+      --neon-cyan: #0000ff !important;
+      --neon-purple: #8000ff !important;
+      --neon-green: #008000 !important;
+      --neon-orange: #cc6600 !important;
+      --grad-cyan-purple: linear-gradient(135deg, #0000ff, #8000ff) !important;
+      --grad-purple-green: linear-gradient(135deg, #8000ff, #008000) !important;
+      --grad-green-orange: linear-gradient(135deg, #008000, #cc6600) !important;
+      --glass-bg: rgba(255,255,255,0.95) !important;
+      --glass-border: #000000 !important;
+    }
+    .high-contrast * { forced-color-adjust: none; }
+    .high-contrast .glass-card,
+    .high-contrast .btn,
+    .high-contrast .element-card,
+    .high-contrast .scientist-card,
+    .high-contrast .timeline-content {
+      border: 2px solid #000000 !important;
+    }
+    .high-contrast .btn-primary { background: #000000 !important; color: #ffffff !important; border-color: #000000 !important; }
+    .high-contrast .btn-secondary { background: #ffffff !important; color: #000000 !important; border: 2px solid #000000 !important; }
+    .high-contrast .btn:hover { filter: invert(1); }
+    .high-contrast a { text-decoration: underline; }
+    .high-contrast :focus { outline: 3px solid #0000ff !important; outline-offset: 2px !important; }
+    .high-contrast .particle-field,
+    .high-contrast .grid-overlay,
+    .high-contrast .accelerator-ring { display: none !important; }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      .page-loader { transition: none; }
+      .loader-atom * { animation: none !important; }
+      .loader-text { animation: none !important; }
+      .loader-bar::after { animation: none !important; }
+      .section-hidden { opacity: 1; transform: none; }
+      .section-visible { transition: none; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .particle-field, .accelerator-ring { display: none !important; }
+    }
+
+    /* Focus Visible */
+    :focus:not(:focus-visible) { outline: none; }
+    :focus-visible {
+      outline: 3px solid var(--neon-cyan);
+      outline-offset: 2px;
+      box-shadow: 0 0 0 4px rgba(0, 243, 255, 0.3);
+    }
+
+    /* Print Styles */
+    @media print {
+      .page-loader, .particle-field, .grid-overlay, .accelerator-ring,
+      .scroll-progress, .scroll-indicator, .back-to-top,
+      .hero-actions, .footer-links, .share-buttons,
+      .newsletter-form, .quiz-container, .participate-card .btn,
+      .high-contrast-toggle, .lang-toggle { display: none !important; }
+      body { background: white !important; color: black !important; }
+      .section { opacity: 1 !important; transform: none !important; page-break-inside: avoid; }
+      .glass-card { background: white !important; border: 1px solid #ccc !important; box-shadow: none !important; }
+      .gradient-text, .gradient-text-cyan, .gradient-text-green { background: none !important; -webkit-text-fill-color: initial !important; color: black !important; }
+      a { text-decoration: underline; color: black !important; }
+      a[href^="#"]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
+      .hero-title { font-size: 2rem !important; }
+      .stat-value { color: black !important; }
+    }
+
+    /* Countdown Timer */
+    .countdown-timer { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6); }
+    .countdown-item { display: flex; flex-direction: column; align-items: center; min-width: 70px; }
+    .countdown-value { font-family: var(--font-mono); font-size: var(--text-3xl); font-weight: 700; background: linear-gradient(135deg, #00f3ff, #bc71ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
+    .countdown-label { font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-top: var(--space-1); }
+
+    /* Social Share Buttons */
+    .share-buttons { display: flex; gap: var(--space-3); flex-wrap: wrap; justify-content: center; margin-top: var(--space-4); }
+    .share-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: var(--radius-full); background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--text-primary); transition: all var(--transition-fast); backdrop-filter: blur(10px); }
+    .share-btn:hover { background: var(--neon-cyan); color: var(--color-space); transform: translateY(-2px); box-shadow: var(--glow-cyan); }
+    .share-btn:focus-visible { outline-color: var(--neon-cyan); }
+
+    /* High Contrast Toggle */
+    .high-contrast-toggle { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-4); background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-full); color: var(--text-primary); font-size: var(--text-sm); cursor: pointer; transition: all var(--transition-fast); backdrop-filter: blur(10px); }
+    .high-contrast-toggle:hover { background: var(--neon-purple); color: var(--color-space); border-color: var(--neon-purple); }
+    .high-contrast-toggle[aria-pressed="true"] { background: var(--neon-green); color: var(--color-space); border-color: var(--neon-green); }
+    .high-contrast-toggle svg { width: 18px; height: 18px; }
+
+    
+    /* Hero Header Actions */
+    .hero-header-actions { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; margin-top: var(--space-4); }
+
+    /* Participate Section */
+    .participate-section { padding: var(--space-20) 0; }
+    .participate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6); margin-top: var(--space-10); }
+    .participate-card { padding: var(--space-8); }
+    .participate-icon { width: 64px; height: 64px; margin-bottom: var(--space-4); }
+    .participate-title { font-size: var(--text-xl); margin-bottom: var(--space-2); }
+    .participate-desc { color: var(--text-secondary); margin-bottom: var(--space-4); }
+    .participate-link { display: inline-flex; align-items: center; gap: var(--space-2); font-weight: 600; color: var(--neon-cyan); text-decoration: none; transition: color var(--transition-fast); }
+    .participate-link:hover { color: var(--neon-purple); }
+
+    /* Newsletter Section */
+    .newsletter-section { background: linear-gradient(135deg, rgba(0,243,255,0.05), rgba(188,113,255,0.05)); border-top: 1px solid var(--glass-border); padding: var(--space-16) 0; }
+    .newsletter-content { max-width: 600px; margin: 0 auto; text-align: center; }
+    .newsletter-title { font-size: var(--text-2xl); margin-bottom: var(--space-2); }
+    .newsletter-desc { color: var(--text-secondary); margin-bottom: var(--space-6); }
+    .newsletter-form { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; }
+    .newsletter-input { flex: 1; min-width: 250px; max-width: 400px; padding: var(--space-3) var(--space-4); background: var(--color-bg-elevated); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); color: var(--text-primary); font-family: var(--font-body); font-size: var(--text-base); transition: border-color var(--transition-fast), box-shadow var(--transition-fast); }
+    .newsletter-input:focus { outline: none; border-color: var(--neon-cyan); box-shadow: 0 0 0 3px rgba(0,243,255,0.2); }
+    .newsletter-input::placeholder { color: var(--text-muted); }
+    .newsletter-honeypot { position: absolute; left: -9999px; opacity: 0; }
+    .newsletter-btn { padding: var(--space-3) var(--space-6); }
+    .newsletter-status { margin-top: var(--space-4); min-height: 1.5em; font-size: var(--text-sm); }
+    .newsletter-status.success { color: var(--neon-green); }
+    .newsletter-status.error { color: #ff4444; }
+
+    /* Quiz Section */
+    .quiz-section { padding: var(--space-20) 0; }
+    .quiz-container { max-width: 800px; margin: 0 auto; }
+    .quiz-header { text-align: center; margin-bottom: var(--space-10); }
+    .quiz-progress { display: flex; gap: var(--space-2); justify-content: center; margin-bottom: var(--space-6); }
+    .quiz-progress-dot { width: 12px; height: 12px; border-radius: var(--radius-full); background: var(--glass-border); transition: all var(--transition-normal); }
+    .quiz-progress-dot.active { background: var(--neon-cyan); box-shadow: var(--glow-cyan); transform: scale(1.2); }
+    .quiz-progress-dot.completed { background: var(--neon-green); }
+    .quiz-question { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-xl); padding: var(--space-8); margin-bottom: var(--space-6); animation: fadeInUp 0.5s ease; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .quiz-question.hidden { display: none; }
+    .quiz-question-text { font-size: var(--text-lg); margin-bottom: var(--space-6); line-height: 1.5; }
+    .quiz-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-3); }
+    .quiz-option { padding: var(--space-4) var(--space-5); background: var(--color-bg-elevated); border: 2px solid var(--glass-border); border-radius: var(--radius-lg); cursor: pointer; transition: all var(--transition-fast); text-align: left; font-family: var(--font-body); font-size: var(--text-base); color: var(--text-primary); }
+    .quiz-option:hover { border-color: var(--neon-cyan); background: rgba(0,243,255,0.05); }
+    .quiz-option.selected { border-color: var(--neon-cyan); background: rgba(0,243,255,0.1); box-shadow: var(--glow-cyan); }
+    .quiz-option:focus-visible { outline-color: var(--neon-cyan); }
+    .quiz-navigation { display: flex; justify-content: space-between; margin-top: var(--space-6); }
+    .quiz-btn { padding: var(--space-3) var(--space-6); }
+    .quiz-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .quiz-result { text-align: center; animation: fadeInUp 0.6s ease; }
+    .quiz-result.hidden { display: none; }
+    .quiz-result-avatar { width: 120px; height: 120px; border-radius: var(--radius-xl); object-fit: cover; margin-bottom: var(--space-6); box-shadow: var(--glow-cyan); }
+    .quiz-result-name { font-size: var(--text-3xl); margin-bottom: var(--space-2); }
+    .quiz-result-desc { color: var(--text-secondary); max-width: 600px; margin: 0 auto var(--space-6); line-height: 1.7; }
+    .quiz-result-tags { display: flex; gap: var(--space-2); justify-content: center; flex-wrap: wrap; margin-bottom: var(--space-6); }
+    .quiz-restart { padding: var(--space-3) var(--space-8); }
+
+    /* Toast Notifications */
+    .toast-container { position: fixed; bottom: var(--space-6); right: var(--space-6); z-index: 1000; display: flex; flex-direction: column; gap: var(--space-3); }
+    .toast { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-4) var(--space-5); background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); backdrop-filter: blur(10px); box-shadow: var(--shadow-xl); animation: slideInRight 0.3s ease; }
+    @keyframes slideInRight { from { opacity: 0; transform: translateX(100px); } to { opacity: 1; transform: translateX(0); } }
+    .toast.success { border-left: 4px solid var(--neon-green); }
+    .toast.error { border-left: 4px solid #ff4444; }
+    .toast.info { border-left: 4px solid var(--neon-cyan); }
+    .toast-icon { width: 24px; height: 24px; flex-shrink: 0; }
+    .toast-message { font-size: var(--text-sm); color: var(--text-primary); }
+    .toast-close { margin-left: auto; background: none; border: none; color: var(--text-muted); cursor: pointer; padding: var(--space-1); }
+    .toast-close:hover { color: var(--text-primary); }
+
+    /* Footer Social */
+    .footer-social { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; margin-top: var(--space-4); }
+
+    /* Countdown ARIA live region */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
   </style>
 </head>
 <body>
+  <!-- Skip Link -->
+  <a href="#main" class="skip-link">Saltar para conteúdo principal</a>
+
   <!-- Loading Screen -->
   <div class="page-loader" aria-hidden="true" id="page-loader">
     <div class="loader-content">
@@ -114,6 +395,7 @@
         sustentáveis e prósperas. Uma data para refletir, agir e inspirar o futuro.
       </p>
 
+      
       <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
         <button class="btn btn-primary btn-pulse" data-aos="zoom-in" data-aos-delay="600" onclick="scrollToSection('manifesto')">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -129,6 +411,7 @@
         </button>
       </div>
 
+      
       <div class="hero-stats" data-aos="fade-up" data-aos-delay="800">
         <div class="stat-item">
           <div class="stat-value" id="stat-countries" data-counter="193">0</div>
@@ -158,7 +441,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- ========================================
          MANIFESTO SECTION - Reação em Cadeia
          ======================================== -->
@@ -182,7 +465,7 @@
               <span class="highlight">a diplomacia científica</span> prova que a linguagem dos dados é universal.
             </p>
             <p style="margin-top: var(--space-6);">
-              Este dia — <span class="gradient-text-cyan">10 de Novembro</span> — nos lembra que cada equação resolvida,
+              Este dia <span class="gradient-text-cyan">10 de Novembro</span> nos lembra que cada equação resolvida,
               cada vacina desenvolvida, cada satélite lançado para monitorar o clima,
               é um ato de <span class="highlight">esperança prática</span>.
               A paz não é apenas ausência de conflito; é presença de conhecimento compartilhado.
@@ -197,7 +480,7 @@
 
           <div class="manifesto-signature" data-aos="fade-up" data-aos-delay="500">
             <span class="signature-line"></span>
-            <span>Declaração Universal — UNESCO</span>
+            <span>Declaração Universal UNESCO</span>
             <span class="signature-line"></span>
           </div>
         </div>
@@ -244,7 +527,7 @@
             <h3 class="element-title">Energia Limpa</h3>
             <p class="element-description">
               Desenvolvimento ecológico e sustentável. Fusão nuclear, solar de nova geração,
-              baterias de estado sólido — a revolução energética que permite crescer
+              baterias de estado sólido a revolução energética que permite crescer
               sem destruir o planeta que nos sustenta.
             </p>
             <div class="element-tags">
@@ -262,7 +545,7 @@
             <h3 class="element-title">Diplomacia Científica</h3>
             <p class="element-description">
               A ciência como linguagem universal. Colaborações transfronteiriças no CERN,
-              estação espacial internacional, genoma humano — provam que quando
+              estação espacial internacional, genoma humano provam que quando
               cientistas dialogam, as nações encontram caminhos para a paz.
             </p>
             <div class="element-tags">
@@ -294,10 +577,10 @@
           <!-- Marie Curie -->
           <article class="scientist-card glass-card" data-aos="fade-up" data-aos-delay="100" style="padding: var(--space-6); border-left: 3px solid var(--neon-purple);">
             <div class="scientist-header" style="display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-4);">
-              <div class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); background: var(--grad-purple-green); display: flex; align-items: center; justify-content: center; font-size: var(--text-2xl); font-weight: 700; color: var(--color-space); flex-shrink: 0;">MC</div>
+              <img src="assets/images/Cientistas/Marie_Curie.jpg" alt="Marie Curie" class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); object-fit: cover; flex-shrink: 0;" loading="lazy">
               <div>
                 <h3 class="scientist-name" style="font-size: var(--text-xl); margin-bottom: var(--space-1);">Marie Curie</h3>
-                <p class="scientist-years mono" style="color: var(--neon-purple); font-size: var(--text-sm);">1867–1934 • Polônia/França</p>
+                <p class="scientist-years mono" style="color: var(--neon-purple); font-size: var(--text-sm);">1867 a 1934 • Polônia/França</p>
               </div>
             </div>
             <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Única pessoa a ganhar Nobel em duas ciências diferentes (Física 1903, Química 1911). Pioneira na radioatividade, seu trabalho salvou incontáveis vidas na medicina. Durante a WWI, desenvolveu unidades móveis de raio-X para hospitais de campanha.</p>
@@ -311,13 +594,13 @@
           <!-- Albert Einstein -->
           <article class="scientist-card glass-card" data-aos="fade-up" data-aos-delay="200" style="padding: var(--space-6); border-left: 3px solid var(--neon-cyan);">
             <div class="scientist-header" style="display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-4);">
-              <div class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); background: var(--grad-cyan-purple); display: flex; align-items: center; justify-content: center; font-size: var(--text-2xl); font-weight: 700; color: var(--color-space); flex-shrink: 0;">AE</div>
+              <img src="assets/images/Cientistas/Albert_Einstein.jpg" alt="Albert Einstein" class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); object-fit: cover; flex-shrink: 0;" loading="lazy">
               <div>
                 <h3 class="scientist-name" style="font-size: var(--text-xl); margin-bottom: var(--space-1);">Albert Einstein</h3>
-                <p class="scientist-years mono" style="color: var(--neon-cyan); font-size: var(--text-sm);">1879–1955 • Alemanha/EUA</p>
+                <p class="scientist-years mono" style="color: var(--neon-cyan); font-size: var(--text-sm);">1879 a 1955 • Alemanha/EUA</p>
               </div>
             </div>
-            <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Relatividade geral transformou nossa compreensão do universo. Pacifista convicto, assinou o Manifesto Russell-Einstein (1955) alertando para perigos nucleares. Sua carta a Roosevelt (1939) iniciou o Projeto Manhattan, mas depois arrependeu-se e advogou pelo desarmamento.</p>
+            <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Relatividade geral transformou nossa compreensão do universo. Pacifista convicto, assinou o Manifesto Russell Einstein (1955) alertando para perigos nucleares. Sua carta a Roosevelt (1939) iniciou o Projeto Manhattan, mas depois arrependeu-se e advogou pelo desarmamento.</p>
             <div class="scientist-legacy" style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
               <span class="tag" style="background: rgba(0,243,255,0.15); border-color: rgba(0,243,255,0.3); color: var(--neon-cyan);">Relatividade</span>
               <span class="tag" style="background: rgba(0,243,255,0.15); border-color: rgba(0,243,255,0.3); color: var(--neon-cyan);">Pacifismo</span>
@@ -328,13 +611,13 @@
           <!-- Tu Youyou -->
           <article class="scientist-card glass-card" data-aos="fade-up" data-aos-delay="300" style="padding: var(--space-6); border-left: 3px solid var(--neon-green);">
             <div class="scientist-header" style="display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-4);">
-              <div class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); background: var(--grad-green-orange); display: flex; align-items: center; justify-content: center; font-size: var(--text-2xl); font-weight: 700; color: var(--color-space); flex-shrink: 0;">TY</div>
+              <img src="assets/images/Cientistas/TuYouyou.jpeg" alt="Tu Youyou" class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); object-fit: cover; flex-shrink: 0;" loading="lazy">
               <div>
                 <h3 class="scientist-name" style="font-size: var(--text-xl); margin-bottom: var(--space-1);">Tu Youyou</h3>
-                <p class="scientist-years mono" style="color: var(--neon-green); font-size: var(--text-sm);">1930–presente • China</p>
+                <p class="scientist-years mono" style="color: var(--neon-green); font-size: var(--text-sm);">1930 presente • China</p>
               </div>
             </div>
-            <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Descobriu a artemisinina, tratamento revolucionário contra malária que salvou milhões de vidas no mundo em desenvolvimento. Prêmio Nobel de Fisiologia/Medicina 2015. Sua pesquisa combinou medicina tradicional chinesa com ciência moderna — exemplo perfeito de ciência a serviço da humanidade.</p>
+            <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Descobriu a artemisinina, tratamento revolucionário contra malária que salvou milhões de vidas no mundo em desenvolvimento. Prêmio Nobel de Fisiologia/Medicina 2015. Sua pesquisa combinou medicina tradicional chinesa com ciência moderna exemplo perfeito de ciência a serviço da humanidade.</p>
             <div class="scientist-legacy" style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
               <span class="tag" style="background: rgba(57,255,20,0.15); border-color: rgba(57,255,20,0.3); color: var(--neon-green);">Antimalárica</span>
               <span class="tag" style="background: rgba(57,255,20,0.15); border-color: rgba(57,255,20,0.3); color: var(--neon-green);">Saúde Global</span>
@@ -345,10 +628,10 @@
           <!-- Abdus Salam -->
           <article class="scientist-card glass-card" data-aos="fade-up" data-aos-delay="400" style="padding: var(--space-6); border-left: 3px solid var(--neon-orange);">
             <div class="scientist-header" style="display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-4);">
-              <div class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); background: linear-gradient(135deg, #ff6b35, #bc71ff); display: flex; align-items: center; justify-content: center; font-size: var(--text-2xl); font-weight: 700; color: var(--color-space); flex-shrink: 0;">AS</div>
+              <img src="assets/images/Cientistas/Abdus Salam.jpeg" alt="Abdus Salam" class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); object-fit: cover; flex-shrink: 0;" loading="lazy">
               <div>
                 <h3 class="scientist-name" style="font-size: var(--text-xl); margin-bottom: var(--space-1);">Abdus Salam</h3>
-                <p class="scientist-years mono" style="color: var(--neon-orange); font-size: var(--text-sm);">1926–1996 • Paquistão/Reino Unido</p>
+                <p class="scientist-years mono" style="color: var(--neon-orange); font-size: var(--text-sm);">1926 a 1996 • Paquistão/Reino Unido</p>
               </div>
             </div>
             <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Nobel de Física 1979 (eletrofraco). Fundou o ICTP (Centro Internacional de Física Teórica) em Trieste, criando ponte para cientistas do Sul Global. Primeiro muçulmano a ganhar Nobel científico. Dedicou vida a reduzir a desigualdade científica entre nações ricas e pobres.</p>
@@ -362,13 +645,13 @@
           <!-- Jennifer Doudna -->
           <article class="scientist-card glass-card" data-aos="fade-up" data-aos-delay="500" style="padding: var(--space-6); border-left: 3px solid var(--neon-purple);">
             <div class="scientist-header" style="display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-4);">
-              <div class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); background: var(--grad-purple-green); display: flex; align-items: center; justify-content: center; font-size: var(--text-2xl); font-weight: 700; color: var(--color-space); flex-shrink: 0;">JD</div>
+              <img src="assets/images/Cientistas/Jennifer_Doudna.jpg" alt="Jennifer Doudna" class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); object-fit: cover; flex-shrink: 0;" loading="lazy">
               <div>
                 <h3 class="scientist-name" style="font-size: var(--text-xl); margin-bottom: var(--space-1);">Jennifer Doudna</h3>
-                <p class="scientist-years mono" style="color: var(--neon-purple); font-size: var(--text-sm);">1964–presente • EUA</p>
+                <p class="scientist-years mono" style="color: var(--neon-purple); font-size: var(--text-sm);">1964 presente • EUA</p>
               </div>
             </div>
-            <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Co-descobridora do CRISPR-Cas9, revolucionando edição genética. Nobel de Química 2020. Líder na ética da edição genômica, defende uso responsável para curar doenças genéticas. Exemplo de ciência de fronteira com responsabilidade social.</p>
+            <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Co descobridora do CRISPR Cas9, revolucionando edição genética. Nobel de Química 2020. Líder na ética da edição genômica, defende uso responsável para curar doenças genéticas. Exemplo de ciência de fronteira com responsabilidade social.</p>
             <div class="scientist-legacy" style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
               <span class="tag" style="background: rgba(188,113,255,0.15); border-color: rgba(188,113,255,0.3); color: var(--neon-purple);">CRISPR</span>
               <span class="tag" style="background: rgba(188,113,255,0.15); border-color: rgba(188,113,255,0.3); color: var(--neon-purple);">Edição Genética</span>
@@ -379,17 +662,68 @@
           <!-- Carlos Chagas -->
           <article class="scientist-card glass-card" data-aos="fade-up" data-aos-delay="600" style="padding: var(--space-6); border-left: 3px solid var(--neon-green);">
             <div class="scientist-header" style="display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-4);">
-              <div class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); background: var(--grad-green-orange); display: flex; align-items: center; justify-content: center; font-size: var(--text-2xl); font-weight: 700; color: var(--color-space); flex-shrink: 0;">CC</div>
+              <img src="assets/images/Cientistas/CarlosChagas.jpeg" alt="Carlos Chagas" class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); object-fit: cover; flex-shrink: 0;" loading="lazy">
               <div>
                 <h3 class="scientist-name" style="font-size: var(--text-xl); margin-bottom: var(--space-1);">Carlos Chagas</h3>
-                <p class="scientist-years mono" style="color: var(--neon-green); font-size: var(--text-sm);">1879–1934 • Brasil</p>
+                <p class="scientist-years mono" style="color: var(--neon-green); font-size: var(--text-sm);">1879 a 1934 • Brasil</p>
               </div>
             </div>
-            <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Descobriu a doença de Chagas (1909), identificando parasita, vetor, hospedeiro e sintomas — feito único na parasitologia. Fundou o Instituto Oswaldo Cruz. Pioneiro em saúde pública tropical, seu trabalho salva vidas na América Latina até hoje. Símbolo da ciência brasileira a serviço do povo.</p>
+            <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Descobriu a doença de Chagas (1909), identificando parasita, vetor, hospedeiro e sintomas feito único na parasitologia. Fundou o Instituto Oswaldo Cruz. Pioneiro em saúde pública tropical, seu trabalho salva vidas na América Latina até hoje. Símbolo da ciência brasileira a serviço do povo.</p>
             <div class="scientist-legacy" style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
               <span class="tag" style="background: rgba(57,255,20,0.15); border-color: rgba(57,255,20,0.3); color: var(--neon-green);">Parasitologia</span>
               <span class="tag" style="background: rgba(57,255,20,0.15); border-color: rgba(57,255,20,0.3); color: var(--neon-green);">Saúde Tropical</span>
               <span class="tag" style="background: rgba(57,255,20,0.15); border-color: rgba(57,255,20,0.3); color: var(--neon-green);">Ciência Brasileira</span>
+            </div>
+          </article>
+
+          <!-- Rosalind Franklin -->
+          <article class="scientist-card glass-card" data-aos="fade-up" data-aos-delay="700" style="padding: var(--space-6); border-left: 3px solid var(--neon-cyan);">
+            <div class="scientist-header" style="display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-4);">
+              <img src="assets/images/Cientistas/RosalingFranklin.jpeg" alt="Rosalind Franklin" class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); object-fit: cover; flex-shrink: 0;" loading="lazy">
+              <div>
+                <h3 class="scientist-name" style="font-size: var(--text-xl); margin-bottom: var(--space-1);">Rosalind Franklin</h3>
+                <p class="scientist-years mono" style="color: var(--neon-cyan); font-size: var(--text-sm);">1920 a 1958 • Reino Unido</p>
+              </div>
+            </div>
+            <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Seus dados de difração de raios X (Foto 51) foram cruciais para a descoberta da estrutura do DNA. Pioneira em virologia e estrutura do carvão grafite. Seu trabalho fundamentou a biologia molecular moderna, embora não tenha recebido o Nobel em vida.</p>
+            <div class="scientist-legacy" style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+              <span class="tag" style="background: rgba(0,243,255,0.15); border-color: rgba(0,243,255,0.3); color: var(--neon-cyan);">Estrutura do DNA</span>
+              <span class="tag" style="background: rgba(0,243,255,0.15); border-color: rgba(0,243,255,0.3); color: var(--neon-cyan);">Cristalografia</span>
+              <span class="tag" style="background: rgba(0,243,255,0.15); border-color: rgba(0,243,255,0.3); color: var(--neon-cyan);">Mulheres na Ciência</span>
+            </div>
+          </article>
+
+          <!-- Katherine Johnson -->
+          <article class="scientist-card glass-card" data-aos="fade-up" data-aos-delay="800" style="padding: var(--space-6); border-left: 3px solid var(--neon-green);">
+            <div class="scientist-header" style="display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-4);">
+              <img src="assets/images/Cientistas/KatherineJohnson.jpeg" alt="Katherine Johnson" class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); object-fit: cover; flex-shrink: 0;" loading="lazy">
+              <div>
+                <h3 class="scientist-name" style="font-size: var(--text-xl); margin-bottom: var(--space-1);">Katherine Johnson</h3>
+                <p class="scientist-years mono" style="color: var(--neon-green); font-size: var(--text-sm);">1918 a 2020 • EUA</p>
+              </div>
+            </div>
+            <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Matemática da NASA cujos cálculos de mecânica orbital foram essenciais para o sucesso do Projeto Mercury, Apollo 11 e do programa Space Shuttle. Quebrou barreiras raciais e de gênero, recebendo a Medalha Presidencial da Liberdade em 2015.</p>
+            <div class="scientist-legacy" style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+              <span class="tag" style="background: rgba(57,255,20,0.15); border-color: rgba(57,255,20,0.3); color: var(--neon-green);">Mecânica Orbital</span>
+              <span class="tag" style="background: rgba(57,255,20,0.15); border-color: rgba(57,255,20,0.3); color: var(--neon-green);">NASA</span>
+              <span class="tag" style="background: rgba(57,255,20,0.15); border-color: rgba(57,255,20,0.3); color: var(--neon-green);">Diversidade na Ciência</span>
+            </div>
+          </article>
+
+          <!-- Fei-Fei Li -->
+          <article class="scientist-card glass-card" data-aos="fade-up" data-aos-delay="900" style="padding: var(--space-6); border-left: 3px solid var(--neon-purple);">
+            <div class="scientist-header" style="display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-4);">
+              <img src="assets/images/Cientistas/Fei-Fei Lis.jpeg" alt="Fei-Fei Li" class="scientist-avatar" style="width: 64px; height: 64px; border-radius: var(--radius-lg); object-fit: cover; flex-shrink: 0;" loading="lazy">
+              <div>
+                <h3 class="scientist-name" style="font-size: var(--text-xl); margin-bottom: var(--space-1);">Fei-Fei Li</h3>
+                <p class="scientist-years mono" style="color: var(--neon-purple); font-size: var(--text-sm);">1976 presente • China/EUA</p>
+              </div>
+            </div>
+            <p class="scientist-desc" style="color: var(--text-secondary); margin-bottom: var(--space-4); font-size: var(--text-base);">Pioneira em visão computacional e IA. Criou o ImageNet, dataset que impulsionou a revolução do deep learning. Co-diretora do Stanford HAI, advoga por IA humanocêntrica, ética e inclusiva. Seu trabalho democratizou o acesso à pesquisa em IA.</p>
+            <div class="scientist-legacy" style="display: flex; flex-wrap: wrap; gap: var(--space-2);">
+              <span class="tag" style="background: rgba(188,113,255,0.15); border-color: rgba(188,113,255,0.3); color: var(--neon-purple);">Visão Computacional</span>
+              <span class="tag" style="background: rgba(188,113,255,0.15); border-color: rgba(188,113,255,0.3); color: var(--neon-purple);">ImageNet</span>
+              <span class="tag" style="background: rgba(188,113,255,0.15); border-color: rgba(188,113,255,0.3); color: var(--neon-purple);">IA Ética</span>
             </div>
           </article>
         </div>
@@ -433,7 +767,7 @@
             <div class="timeline-marker" aria-hidden="true"></div>
             <div class="timeline-content glass-card">
               <time class="timeline-year mono">1962</time>
-              <h3 class="timeline-title">Rachel Carson — Primavera Silenciosa</h3>
+              <h3 class="timeline-title">Rachel Carson Primavera Silenciosa</h3>
               <p class="timeline-description">Livro revolucionário expõe perigos dos pesticidas, nasce o movimento ambientalista moderno. Ciência servindo de alerta para proteger a biosfera.</p>
             </div>
           </article>
@@ -452,7 +786,7 @@
             <div class="timeline-content glass-card">
               <time class="timeline-year mono">1987</time>
               <h3 class="timeline-title">Protocolo de Montreal</h3>
-              <p class="timeline-description">Acordo global histórico para proteger a camada de ozônio — prova definitiva de que ciência + política + vontade popular podem reverter danos planetários.</p>
+              <p class="timeline-description">Acordo global histórico para proteger a camada de ozônio prova definitiva de que ciência + política + vontade popular podem reverter danos planetários.</p>
             </div>
           </article>
 
@@ -479,7 +813,7 @@
             <div class="timeline-content glass-card">
               <time class="timeline-year mono">2015</time>
               <h3 class="timeline-title">Objetivos de Desenvolvimento Sustentável</h3>
-              <p class="timeline-description">17 ODS adotados por 193 países, com ciência, tecnologia e inovação no centro de todas as metas — da erradicação da pobreza à ação climática.</p>
+              <p class="timeline-description">17 ODS adotados por 193 países, com ciência, tecnologia e inovação no centro de todas as metas da erradicação da pobreza à ação climática.</p>
             </div>
           </article>
 
@@ -487,7 +821,7 @@
             <div class="timeline-marker" aria-hidden="true"></div>
             <div class="timeline-content glass-card">
               <time class="timeline-year mono">2020</time>
-              <h3 class="timeline-title">Vacinas mRNA — COVID-19</h3>
+              <h3 class="timeline-title">Vacinas mRNA COVID 19</h3>
               <p class="timeline-description">Desenvolvimento recorde de vacinas (Pfizer/BioNTech, Moderna) usando tecnologia mRNA. Ciência global colaborativa salvou dezenas de milhões de vidas em tempo recorde.</p>
             </div>
           </article>
@@ -496,10 +830,196 @@
             <div class="timeline-marker" aria-hidden="true"></div>
             <div class="timeline-content glass-card">
               <time class="timeline-year mono">2022</time>
-              <h3 class="timeline-title">Fusão Nuclear — Ignition Achieved</h3>
-              <p class="timeline-description">NIF (EUA) alcança ignição de fusão com ganho energético líquido. Marco histórico rumo à energia limpa, abundante e segura — o "Santo Graal" da física aplicada.</p>
+              <h3 class="timeline-title">Fusão Nuclear Ignition Achieved</h3>
+              <p class="timeline-description">NIF (EUA) alcança ignição de fusão com ganho energético líquido. Marco histórico rumo à energia limpa, abundante e segura o "Santo Graal" da física aplicada.</p>
             </div>
           </article>
+
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content glass-card">
+              <time class="timeline-year mono">2023</time>
+              <h3 class="timeline-title">AI Safety Summit Bletchley Park</h3>
+              <p class="timeline-description">Primeira cúpula global sobre segurança de IA reúne 28 nações e líderes tech. Declaração de Bletchley estabelece compromisso com desenvolvimento responsável de IA fronteira.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content glass-card">
+              <time class="timeline-year mono">2024</time>
+              <h3 class="timeline-title">UN Summit of the Future</h3>
+              <p class="timeline-description">Cúpula da ONU adota Pacto para o Futuro, incluindo Pacto Digital Global primeiro acordo multilateral sobre governança de IA, dados abertos e colaboração científica transfronteiriça.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content glass-card">
+              <time class="timeline-year mono">2025</time>
+              <h3 class="timeline-title">Ano Internacional da Ciência Quântica</h3>
+              <p class="timeline-description">ONU proclama 2025 como Ano Internacional da Ciência e Tecnologia Quântica. Celebração global de 100 anos da mecânica quântica, impulsionando computação, criptografia e sensores quânticos.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         PARTICIPATE SECTION - Como Participar
+         ======================================== -->
+    <section class="section participate-section" id="participar">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag" data-aos="fade-up">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Como Participar
+          </span>
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Faça Parte Desta Celebração Global</h2>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">O Dia Mundial da Ciência vive da participação de todos. Escolha como você quer contribuir para a ciência a serviço da paz e do desenvolvimento.</p>
+        </header>
+
+        <div class="participate-grid">
+          <!-- Kit Educativo -->
+          <article class="participate-card glass-card" data-aos="fade-up" data-aos-delay="100">
+            <svg class="participate-icon" viewBox="0 0 24 24" fill="none" stroke="var(--neon-purple)" stroke-width="1.5" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <h3 class="participate-title">Kit Educativo UNESCO</h3>
+            <p class="participate-desc">Baixe materiais gratuitos: planos de aula, cartazes, atividades interativas e guias para professores de todos os níveis.</p>
+            <a href="https://unesco.org/en/world-science-day/resources" target="_blank" rel="noopener" class="participate-link">
+              Baixar recursos
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+          </article>
+
+          <!-- Hashtags Oficiais -->
+          <article class="participate-card glass-card" data-aos="fade-up" data-aos-delay="200">
+            <svg class="participate-icon" viewBox="0 0 24 24" fill="none" stroke="var(--neon-green)" stroke-width="1.5" aria-hidden="true"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+            <h3 class="participate-title">Hashtags Oficiais</h3>
+            <p class="participate-desc">Compartilhe sua celebração nas redes sociais usando as tags oficiais para amplificar a mensagem global.</p>
+            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-top: var(--space-4);">
+              <span class="tag" style="background: var(--neon-cyan); color: var(--color-space); border-color: var(--neon-cyan);">#WorldScienceDay</span>
+              <span class="tag" style="background: var(--neon-purple); border-color: var(--neon-purple);">#ScienceForPeace</span>
+              <span class="tag" style="background: var(--neon-green); color: var(--color-space); border-color: var(--neon-green);">#CienciaPelaPaz</span>
+              <span class="tag" style="background: var(--neon-orange); border-color: var(--neon-orange);">#10Novembro</span>
+            </div>
+          </article>
+
+          <!-- Doar/Apoiar -->
+          <article class="participate-card glass-card" data-aos="fade-up" data-aos-delay="300">
+            <svg class="participate-icon" viewBox="0 0 24 24" fill="none" stroke="var(--neon-orange)" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <h3 class="participate-title">Apoie a Ciência</h3>
+            <p class="participate-desc">Contribua para organizações que promovem educação científica, pesquisa em países em desenvolvimento e diplomacia científica.</p>
+            <a href="https://unesco.org/en/donate" target="_blank" rel="noopener" class="participate-link">
+              Doar à UNESCO
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         QUIZ SECTION - Que Cientista É Você?
+         ======================================== -->
+    <section class="section quiz-section" id="quiz">
+      <div class="container">
+        <div class="quiz-container">
+          <header class="quiz-header">
+            <span class="section-tag" data-aos="fade-up">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              Quiz Interativo
+            </span>
+            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Que Cientista É Você?</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Responda 5 perguntas e descubra qual cientista visionário mais combina com seu perfil.</p>
+
+            <div class="quiz-progress" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="5" aria-label="Progresso do quiz">
+              <div class="quiz-progress-dot active" data-step="1"></div>
+              <div class="quiz-progress-dot" data-step="2"></div>
+              <div class="quiz-progress-dot" data-step="3"></div>
+              <div class="quiz-progress-dot" data-step="4"></div>
+              <div class="quiz-progress-dot" data-step="5"></div>
+            </div>
+          </header>
+
+          <!-- Quiz Questions -->
+          <form class="quiz-form" id="quiz-form">
+            <!-- Question 1 -->
+            <div class="quiz-question" data-question="1" role="group" aria-labelledby="q1-label">
+              <h3 id="q1-label" class="quiz-question-text">O que mais te motiva na ciência?</h3>
+              <div class="quiz-options">
+                <button type="button" class="quiz-option" data-value="discovery" data-scientist="curie,franklin,doudna">Descoberta fundamental entender o "porquê" das coisas</button>
+                <button type="button" class="quiz-option" data-value="application" data-scientist="youyou,chagas,johnson">Aplicação prática resolver problemas reais agora</button>
+                <button type="button" class="quiz-option" data-value="collaboration" data-scientist="salam,einstein,doudna">Colaboração global construir pontes entre nações</button>
+                <button type="button" class="quiz-option" data-value="teaching" data-scientist="curie,johnson,li">Ensino e legado inspirar as próximas gerações</button>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="quiz-question hidden" data-question="2" role="group" aria-labelledby="q2-label">
+              <h3 id="q2-label" class="quiz-question-text">Qual área desperta mais sua curiosidade?</h3>
+              <div class="quiz-options">
+                <button type="button" class="quiz-option" data-value="physics" data-scientist="curie,einstein,salam,franklin,johnson">Física das partículas ao cosmos</button>
+                <button type="button" class="quiz-option" data-value="biology" data-scientist="youyou,doudna,chagas">Biologia e saúde a vida em todas as escalas</button>
+                <button type="button" class="quiz-option" data-value="technology" data-scientist="li,doudna,einstein">Tecnologia e computação o futuro digital</button>
+                <button type="button" class="quiz-option" data-value="interdisciplinary" data-scientist="salam,curie,li">Interdisciplinar onde campos se encontram</button>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="quiz-question hidden" data-question="3" role="group" aria-labelledby="q3-label">
+              <h3 id="q3-label" class="quiz-question-text">Como você prefere trabalhar?</h3>
+              <div class="quiz-options">
+                <button type="button" class="quiz-option" data-value="solo" data-scientist="curie,franklin,einstein">Foco profundo sozinho no laboratório escritório</button>
+                <button type="button" class="quiz-option" data-value="large-team" data-scientist="salam,li,doudna">Grandes colaborações centenas de mentes unidas</button>
+                <button type="button" class="quiz-option" data-value="small-team" data-scientist="youyou,chagas,johnson">Equipe pequena pares próximos e mentoria</button>
+                <button type="button" class="quiz-option" data-value="mentorship" data-scientist="curie,johnson,li">Mentoria guiar novos talentos</button>
+              </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="quiz-question hidden" data-question="4" role="group" aria-labelledby="q4-label">
+              <h3 id="q4-label" class="quiz-question-text">Qual valor guia suas decisões?</h3>
+              <div class="quiz-options">
+                <button type="button" class="quiz-option" data-value="truth" data-scientist="curie,einstein,franklin">Verdade científica rigor acima de tudo</button>
+                <button type="button" class="quiz-option" data-value="impact" data-scientist="youyou,chagas,doudna">Impacto humano vidas salvas e melhoradas</button>
+                <button type="button" class="quiz-option" data-value="unity" data-scientist="salam,einstein,li">União global ciência sem fronteiras</button>
+                <button type="button" class="quiz-option" data-value="equity" data-scientist="curie,johnson,salam">Equidade ciência para todos não para poucos</button>
+              </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="quiz-question hidden" data-question="5" role="group" aria-labelledby="q5-label">
+              <h3 id="q5-label" class="quiz-question-text">Que legado você gostaria de deixar?</h3>
+              <div class="quiz-options">
+                <button type="button" class="quiz-option" data-value="knowledge" data-scientist="curie,einstein,franklin">Conhecimento puro expandir o que sabemos</button>
+                <button type="button" class="quiz-option" data-value="healing" data-scientist="youyou,chagas,doudna">Cura e saúde aliviar sofrimento</button>
+                <button type="button" class="quiz-option" data-value="peace" data-scientist="salam,einstein,li">Paz duradoura ciência unindo nações</button>
+                <button type="button" class="quiz-option" data-value="inclusion" data-scientist="curie,johnson,li">Inclusão radical portas abertas para todos</button>
+              </div>
+            </div>
+
+            <div class="quiz-navigation">
+              <button type="button" class="quiz-btn btn-secondary" id="quiz-prev" disabled>Anterior</button>
+              <button type="button" class="quiz-btn btn-primary" id="quiz-next">Próxima</button>
+            </div>
+          </form>
+
+          <!-- Quiz Result -->
+          <div class="quiz-result hidden" id="quiz-result" role="status" aria-live="polite">
+            <div class="quiz-progress">
+              <div class="quiz-progress-dot completed" data-step="1"></div>
+              <div class="quiz-progress-dot completed" data-step="2"></div>
+              <div class="quiz-progress-dot completed" data-step="3"></div>
+              <div class="quiz-progress-dot completed" data-step="4"></div>
+              <div class="quiz-progress-dot completed" data-step="5"></div>
+            </div>
+            <img class="quiz-result-avatar" id="result-avatar" src="" alt="" loading="lazy">
+            <h2 class="quiz-result-name" id="result-name"></h2>
+            <p class="quiz-result-desc" id="result-desc"></p>
+            <div class="quiz-result-tags" id="result-tags"></div>
+            <div id="quiz-live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+            <button type="button" class="quiz-restart btn-primary" id="quiz-restart">Refazer Quiz</button>
+          </div>
         </div>
       </div>
     </section>
@@ -513,7 +1033,7 @@
       <div class="footer-content">
         <blockquote class="footer-quote" data-aos="fade-up">
           <p>"A ciência é a lanterna que ilumina o caminho da paz.<br>O desenvolvimento é a jornada que fazemos juntos."</p>
-          <cite class="author">— Inspirado na Declaração de Budapeste, UNESCO 1999</cite>
+          <cite class="author">Inspirado na Declaração de Budapeste, UNESCO 1999</cite>
         </blockquote>
 
         <nav class="footer-links" data-aos="fade-up" data-aos-delay="100" aria-label="Links do rodapé">
@@ -522,12 +1042,14 @@
           <a href="#elementos" class="footer-link">Pilares</a>
           <a href="#cientistas" class="footer-link">Cientistas</a>
           <a href="#timeline" class="footer-link">História</a>
+          <a href="#participar" class="footer-link">Participar</a>
+          <a href="#quiz" class="footer-link">Quiz</a>
           <a href="https://unesco.org" target="_blank" rel="noopener" class="footer-link">UNESCO</a>
         </nav>
 
-        <p class="footer-copyright" data-aos="fade-up" data-aos-delay="200">
+        <p class="footer-copyright" data-aos="fade-up" data-aos-delay="300">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:middle;margin-right:4px;" aria-hidden="true"><circle cx="12" cy="12" r="10"/></svg>
-          2024 Dia Mundial da Ciência para a Paz e o Desenvolvimento — Construído com ciência, código e esperança.
+          2024 Dia Mundial da Ciência para a Paz e o Desenvolvimento Construído com ciência, código e esperança.
         </p>
       </div>
     </div>
@@ -539,6 +1061,9 @@
       <polyline points="18 15 12 9 6 15"/>
     </svg>
   </button>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-label="Notificações"></div>
 
   <!-- Scripts -->
   <!-- AOS Library -->
@@ -577,10 +1102,8 @@
           disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
         });
         window._aosInitialized = true;
-        // Mark AOS as loaded successfully
         document.documentElement.classList.add('aos-loaded');
       } else if (typeof AOS === 'undefined') {
-        // AOS failed to load - fallback: make all aos elements visible
         document.documentElement.classList.add('no-aos');
         console.warn('AOS library failed to load, showing all animated elements');
       }
@@ -593,11 +1116,9 @@
         loader.classList.add('loaded');
         setTimeout(() => { loader.style.display = 'none'; }, 500);
       }
-      // Refresh AOS after load
       if (typeof AOS !== 'undefined') {
         setTimeout(() => AOS.refresh(), 100);
       }
-      // Fallback: if AOS hasn't initialized after 3 seconds, force visibility
       setTimeout(() => {
         if (typeof AOS !== 'undefined' && !document.documentElement.classList.contains('aos-loaded')) {
           document.documentElement.classList.add('no-aos');
@@ -622,7 +1143,6 @@
             }
           });
         }, { threshold: 0.5 });
-
         counters.forEach(c => observer.observe(c));
       }
     });
@@ -631,7 +1151,6 @@
       const start = 0;
       const startTime = performance.now();
       const isLarge = target >= 1000;
-
       function update(now) {
         const progress = Math.min((now - startTime) / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
@@ -648,6 +1167,17 @@
       if (e.key === 'Home' && e.ctrlKey) { e.preventDefault(); scrollToTop(); }
       if (e.key === 'End' && e.ctrlKey) { e.preventDefault(); window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }); }
     });
+  </script>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('SW registered:', reg.scope))
+          .catch(err => console.log('SW registration failed:', err));
+      });
+    }
   </script>
 </body>
 </html>

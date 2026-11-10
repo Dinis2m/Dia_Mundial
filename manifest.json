@@ -1,0 +1,55 @@
+{
+  "name": "Dia Mundial da Ciência para a Paz e o Desenvolvimento",
+  "short_name": "Dia da Ciência",
+  "description": "Celebrando a ciência como força motriz da paz global e desenvolvimento sustentável - 10 de Novembro",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0f19",
+  "theme_color": "#00f3ff",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "pt-PT",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "assets/icons/science-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "science", "reference"],
+  "screenshots": [],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "shortcuts": [
+    {
+      "name": "Manifesto",
+      "short_name": "Manifesto",
+      "description": "Ler o manifesto pela ciência e paz",
+      "url": "/#manifesto",
+      "icons": [{ "src": "assets/icons/science-icon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Cientistas",
+      "short_name": "Cientistas",
+      "description": "Conhecer os cientistas que mudaram o mundo",
+      "url": "/#cientistas",
+      "icons": [{ "src": "assets/icons/science-icon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Participar",
+      "short_name": "Participar",
+      "description": "Como participar do Dia Mundial da Ciência",
+      "url": "/#participar",
+      "icons": [{ "src": "assets/icons/science-icon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Quiz",
+      "short_name": "Quiz",
+      "description": "Descubra qual cientista você é",
+      "url": "/#quiz",
+      "icons": [{ "src": "assets/icons/science-icon.svg", "sizes": "192x192" }]
+    }
+  ]
+}
